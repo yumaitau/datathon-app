@@ -154,6 +154,8 @@ nonisolated struct Comment: Codable, Hashable, Identifiable, Sendable {
     var body: String
     var parentCommentId: String?
     var status: String
+    var reactions: ReactionCounts?
+    var myReactions: [String]?
     var createdAt: Date
     var replies: [Comment]?
 }
@@ -195,6 +197,23 @@ nonisolated struct Report: Codable, Hashable, Identifiable, Sendable {
     var reason: String
     var comment: Comment
     var createdAt: Date
+}
+
+/// An active member, as listed for Elders (`GET /api/groups/:id/members`).
+nonisolated struct GroupMember: Codable, Hashable, Identifiable, Sendable {
+    struct Person: Codable, Hashable, Sendable {
+        var id: String
+        var name: String
+        var isMinor: Bool?
+    }
+    /// Membership id: the target of remove and custodian changes.
+    var id: String
+    var user: Person
+    var role: String
+    var canTranslate: Bool
+    var joinedAt: Date
+
+    var isElder: Bool { role == "elder" }
 }
 
 nonisolated struct ModerationQueue: Codable, Sendable {
@@ -287,6 +306,8 @@ nonisolated struct SyncResponse: Codable, Sendable {
     var results: [MutationResult]
     var appointments: [Appointment]?
     var posts: [Post]?
+    /// Posts archived or rejected since the cursor: drop them from the cache.
+    var removedPostIds: [String]?
     var events: [Event]?
     var memberships: [Membership]?
     var carers: CarersPayload?
@@ -324,6 +345,7 @@ nonisolated struct LiteSyncResponse: Codable, Sendable {
     var results: [MutationResult]
     var appointments: [LiteAppointment]
     var notices: [LiteNotice]
+    var removedPostIds: [String]?
     var deferred: DeferredCounts?
 }
 

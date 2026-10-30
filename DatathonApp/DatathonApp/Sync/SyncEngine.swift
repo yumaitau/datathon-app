@@ -155,6 +155,7 @@ final class SyncEngine {
     func mergeFull(_ r: SyncResponse, profileId pid: String) {
         r.appointments?.forEach { cache.upsert(appointment: $0, profileId: pid) }
         r.posts?.forEach { cache.upsert(post: $0, profileId: pid) }
+        removePosts(r.removedPostIds, profileId: pid)
         r.events?.forEach { cache.upsert(event: $0, profileId: pid) }
         if let carers = r.carers {
             cache.upsert(carers, profileId: pid, kind: CacheKind.carers, id: "carers", sortDate: .now)
@@ -181,7 +182,16 @@ final class SyncEngine {
         for notice in r.notices {
             cache.upsert(notice, profileId: pid, kind: CacheKind.notice, id: notice.id, groupId: notice.groupId, sortDate: notice.createdAt)
         }
+        removePosts(r.removedPostIds, profileId: pid)
         deferred = r.deferred
+    }
+
+    /// Archived sorry business and rejected posts leave the offline cache, as posts and notices.
+    private func removePosts(_ ids: [String]?, profileId pid: String) {
+        for id in ids ?? [] {
+            cache.delete(profileId: pid, kind: CacheKind.post, id: id)
+            cache.delete(profileId: pid, kind: CacheKind.notice, id: id)
+        }
     }
 
     func resetCursors(profileId pid: String) {
@@ -208,12 +218,13 @@ final class SyncEngine {
             appt.status = "confirmed"
             cache.upsert(appointment: appt, profileId: pid)
 
-        case let .createPost(groupId, body, title, kind):
+        case let .createPost(groupId, body, title, kind, options):
             let author = currentUser() ?? PersonRef(id: "me", name: String(localized: "You"))
             let post = Post(id: "local-\(clientMutationId)", groupId: groupId, groupName: nil, author: author,
                             kind: kind ?? "announcement", title: title, body: body, hasMedia: false, imageUrl: nil,
-                            status: "pending", pinned: false, urgent: false, restrictGender: nil, minAge: nil,
-                            deceasedWarning: false, commentsEnabled: true, threadLocked: false, commentCount: 0,
+                            status: "pending", pinned: false, urgent: options.urgent, restrictGender: options.restrictGender,
+                            minAge: options.minAge, deceasedWarning: options.deceasedWarning,
+                            commentsEnabled: kind != "sorry_business", threadLocked: false, commentCount: 0,
                             reactions: .zero, myReactions: [], createdAt: .now, updatedAt: .now)
             cache.upsert(post: post, profileId: pid)
 

@@ -19,6 +19,14 @@ struct ModerationView: View {
             }
             if let error { Section { ErrorBanner(message: error) } }
 
+            Section {
+                NavigationLink {
+                    MembersView(groupId: groupId, groupName: groupName)
+                } label: {
+                    Label("Members", systemImage: "person.2")
+                }
+            }
+
             if let queue {
                 if queue.memberships.isEmpty && queue.posts.isEmpty && queue.providerRequests.isEmpty && queue.reports.isEmpty {
                     Section {
@@ -133,11 +141,17 @@ struct ModerationView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(r.comment.body).font(.subheadline)
                         Text("\(r.comment.author.name) · Reason: \(r.reason)").font(.caption).foregroundStyle(.secondary)
-                        Button(role: .destructive) {
-                            run(r.id) { try await act("/api/comments/\(r.comment.id)/hide") }
-                        } label: { Label("Hide comment", systemImage: "eye.slash") }
-                            .buttonStyle(.bordered)
-                            .disabled(working.contains(r.id))
+                        HStack {
+                            Button {
+                                run(r.id) { try await act("/api/reports/\(r.id)/dismiss") }
+                            } label: { Label("Keep comment", systemImage: "checkmark") }
+                                .buttonStyle(.bordered)
+                            Button(role: .destructive) {
+                                run(r.id) { try await act("/api/comments/\(r.comment.id)/hide") }
+                            } label: { Label("Hide comment", systemImage: "eye.slash") }
+                                .buttonStyle(.bordered)
+                        }
+                        .disabled(working.contains(r.id))
                     }
                     .padding(.vertical, 4)
                 }

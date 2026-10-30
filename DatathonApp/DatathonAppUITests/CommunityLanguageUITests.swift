@@ -61,19 +61,57 @@ final class CommunityLanguageUITests: XCTestCase {
         snapshot("01-language-picker")
         community.tap()
 
-        // UIKit chrome (navigation title, tab bar) and SwiftUI text both use the pack.
-        XCTAssertTrue(app.navigationBars.staticTexts["⟦Séttíñgs⟧"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.tabBars.buttons["⟦Cómmúñíty⟧"].exists)
+        // UIKit chrome (tab bar) and SwiftUI text (section header, toggle) use the pack.
+        // Which seeded strings are approved depends only on each key (see server seed).
+        XCTAssertTrue(app.tabBars.buttons["⟦Cómmúñíty⟧"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.staticTexts["⟦Nótífíçátíóñs⟧"].exists)
         XCTAssertTrue(app.switches["⟦Fórçé sátéllíté módé⟧"].exists)
-        // Not yet translated in the pack: shown in English rather than blank.
-        XCTAssertTrue(app.switches["Mute sorry business notifications"].exists)
+        // Not translated in the pack: shown in English rather than blank, in chrome and SwiftUI alike.
+        XCTAssertTrue(app.navigationBars.staticTexts["Settings"].exists)
+        let languageRow = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Language'")).firstMatch
+        XCTAssertTrue(languageRow.exists)
         snapshot("02-community-language")
 
         // Back to English.
-        app.buttons.matching(NSPredicate(format: "label BEGINSWITH '⟦Láñgúágé⟧'")).firstMatch.tap()
+        languageRow.tap()
         app.buttons["English"].tap()
-        XCTAssertTrue(app.navigationBars.staticTexts["Settings"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Notifications"].exists)
+        XCTAssertTrue(app.staticTexts["Notifications"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.tabBars.buttons["Community"].exists)
+    }
+
+    /// Elder members screen: custodian badge from the seed, appoint and stand down a custodian
+    /// (restoring the original state on the server).
+    func testElderAppointsLanguageCustodian() throws {
+        signInAsGrace()
+        let group = app.buttons.containing(NSPredicate(format: "label CONTAINS 'Saltbush Creek'")).firstMatch
+        XCTAssertTrue(group.waitForExistence(timeout: 15))
+        group.tap()
+        app.buttons["Elder review"].tap()
+        let members = app.buttons["Members"]
+        XCTAssertTrue(members.waitForExistence(timeout: 15))
+        members.tap()
+
+        let search = app.searchFields.firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        search.tap()
+        app.typeText("Leah Thompson")
+        // Seeded custodian: badge shown, and her button offers to stand her down.
+        XCTAssertTrue(app.staticTexts["Leah Thompson"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts["Language custodian"].exists, "Seeded custodian badge missing")
+        XCTAssertTrue(app.buttons["Stop language custodian"].exists)
+        snapshot("03-members")
+
+        // Sam isn't a custodian: appoint him, then stand him down to restore the seed.
+        search.buttons["Clear text"].tap()
+        app.typeText("Sam Thompson")
+        XCTAssertTrue(app.staticTexts["Sam Thompson"].waitForExistence(timeout: 10))
+        let appoint = app.buttons["Make language custodian"]
+        XCTAssertTrue(appoint.waitForExistence(timeout: 5))
+        appoint.tap()
+        let stop = app.buttons["Stop language custodian"]
+        XCTAssertTrue(stop.waitForExistence(timeout: 10), "Appointment not shown")
+        XCTAssertTrue(app.staticTexts["Language custodian"].exists)
+        stop.tap()
+        XCTAssertTrue(app.buttons["Make language custodian"].waitForExistence(timeout: 10))
     }
 }

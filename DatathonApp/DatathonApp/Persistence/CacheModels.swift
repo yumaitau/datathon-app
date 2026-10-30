@@ -70,11 +70,21 @@ final class PendingMutation {
     }
 }
 
+/// Elder flags and cultural restrictions on a post. Queued with offline posts so they
+/// aren't lost; the server ignores `urgent`/`deceasedWarning` from non-Elders.
+struct PostOptions: Equatable {
+    var urgent = false
+    var deceasedWarning = false
+    /// "female" or "male"; nil means everyone.
+    var restrictGender: String?
+    var minAge: Int?
+}
+
 /// Typed mutations matching the payloads in API.md "Sync".
 enum QueuedMutation: Equatable {
     case rsvp(eventId: String, response: String)
     case confirmAppointment(appointmentId: String)
-    case createPost(groupId: String, body: String, title: String?, kind: String?)
+    case createPost(groupId: String, body: String, title: String?, kind: String?, options: PostOptions = PostOptions())
     case createComment(postId: String?, eventId: String?, parentCommentId: String?, body: String)
     case reaction(targetType: String, targetId: String, kind: String)
 
@@ -95,10 +105,14 @@ enum QueuedMutation: Equatable {
             o["eventId"] = .string(eventId); o["response"] = .string(response)
         case let .confirmAppointment(id):
             o["appointmentId"] = .string(id)
-        case let .createPost(groupId, body, title, kind):
+        case let .createPost(groupId, body, title, kind, options):
             o["groupId"] = .string(groupId); o["body"] = .string(body)
             if let title { o["title"] = .string(title) }
             if let kind { o["kind"] = .string(kind) }
+            if options.urgent { o["urgent"] = .bool(true) }
+            if options.deceasedWarning { o["deceasedWarning"] = .bool(true) }
+            if let g = options.restrictGender { o["restrictGender"] = .string(g) }
+            if let age = options.minAge { o["minAge"] = .number(Double(age)) }
         case let .createComment(postId, eventId, parentCommentId, body):
             if let postId { o["postId"] = .string(postId) }
             if let eventId { o["eventId"] = .string(eventId) }

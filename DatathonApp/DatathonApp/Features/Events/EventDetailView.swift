@@ -4,6 +4,8 @@ import SwiftUI
 struct EventDetailView: View {
     let eventId: String
     @Environment(SyncEngine.self) private var sync
+    @Environment(ProfileStore.self) private var profiles
+    @State private var error: String?
     @Query private var items: [CachedItem]
     @Query private var pendingRSVP: [PendingMutation]
 
@@ -86,10 +88,63 @@ struct EventDetailView: View {
                 }
             }
 
+            if profiles.isElder(of: event.groupId) {
+                ElderEventControls(event: event, error: $error)
+            }
+            if let error { Section { ErrorBanner(message: error) } }
+
             CommentsSection(target: .event(event.id), groupId: event.groupId,
                             commentsEnabled: event.commentsEnabled, threadLocked: event.threadLocked)
         }
         .localizedNavigationTitle("Event")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+/// Elder per-event settings: comments on/off and lock thread.
+private struct ElderEventControls: View {
+    let event: Event
+    @Binding var error: String?
+    @Environment(AppEnvironment.self) private var env
+    @Environment(NetworkMonitor.self) private var network
+
+    var body: some View {
+        Section {
+            Toggle("Comments on", isOn: binding(\.commentsEnabled, field: "commentsEnabled"))
+            Toggle("Lock thread", isOn: binding(\.threadLocked, field: "threadLocked"))
+        } header: {
+            Label("Elder controls", systemImage: "checkmark.shield")
+        } footer: {
+            if !network.isOnline || network.isSatelliteMode {
+                Text("Elder controls need normal coverage.")
+            }
+        }
+        .disabled(!network.isOnline || network.isSatelliteMode)
+    }
+
+    private func binding(_ keyPath: WritableKeyPath<Event, Bool>, field: String) -> Binding<Bool> {
+        Binding(
+            get: { event[keyPath: keyPath] },
+            set: { newValue in
+                var updated = event
+                updated[keyPath: keyPath] = newValue
+                save(updated)
+                Task {
+                    do {
+                        let saved: Event = try await env.api.post("/api/events/\(event.id)/settings", [field: newValue])
+                        save(saved)
+                        error = nil
+                    } catch {
+                        self.error = error.localizedDescription
+                        save(event)
+                    }
+                }
+            })
+    }
+
+    private func save(_ e: Event) {
+        guard let pid = env.profiles.activeProfileId else { return }
+        env.cache.upsert(event: e, profileId: pid)
+        try? env.container.mainContext.save()
     }
 }

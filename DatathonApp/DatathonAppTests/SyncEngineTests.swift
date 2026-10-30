@@ -191,6 +191,42 @@ struct SyncEngineTests {
         #expect(synced.body == "Footy training moved")
     }
 
+    @Test func offlineElderPostKeepsFlagsAndRestrictions() throws {
+        let h = try SyncHarness()
+        h.online = false
+        let options = PostOptions(urgent: true, deceasedWarning: true, restrictGender: "female", minAge: 18)
+        let pending = try #require(h.engine.enqueue(.createPost(groupId: "g1", body: "Women's business at the hall",
+                                                                title: nil, kind: "announcement", options: options), flushNow: false))
+        // The queued payload carries every flag, so nothing is lost if it sends later.
+        guard case .object(let payload) = pending.dto.payload else { Issue.record("payload not an object"); return }
+        #expect(payload["urgent"] == .bool(true))
+        #expect(payload["deceasedWarning"] == .bool(true))
+        #expect(payload["restrictGender"] == .string("female"))
+        #expect(payload["minAge"] == .number(18))
+        // And the local copy reflects them while it waits.
+        let local = try #require(h.cache.value(Post.self, profileId: h.profileId, kind: CacheKind.post, id: "local-\(pending.clientMutationId)"))
+        #expect(local.urgent == true && local.deceasedWarning)
+        #expect(local.restrictGender == "female" && local.minAge == 18)
+    }
+
+    @Test func removedPostsLeaveTheOfflineCache() async throws {
+        let h = try SyncHarness()
+        let json = """
+        {"id":"p1","groupId":"g1","author":{"id":"u2","name":"Aunty Grace"},"kind":"sorry_business","body":"Sorry business",
+         "status":"published","pinned":false,"deceasedWarning":true,"commentsEnabled":false,"threadLocked":false,
+         "createdAt":"2026-10-20T01:00:00.000Z"}
+        """
+        h.cache.upsert(post: try JSONDecoder.api.decode(Post.self, from: Data(json.utf8)), profileId: h.profileId)
+        #expect(h.cache.item(profileId: h.profileId, kind: CacheKind.post, id: "p1") != nil)
+
+        var response = SyncHarness.fullResponse([])
+        response.removedPostIds = ["p1"]
+        h.transport.outcomes = [.full(response)]
+        await h.engine.flush()
+
+        #expect(h.cache.item(profileId: h.profileId, kind: CacheKind.post, id: "p1") == nil)
+    }
+
     @Test func satelliteModeUsesLiteSyncAndKeepsDetailFields() async throws {
         let h = try SyncHarness()
         h.satellite = true

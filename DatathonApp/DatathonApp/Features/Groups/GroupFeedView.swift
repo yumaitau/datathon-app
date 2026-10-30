@@ -227,6 +227,8 @@ struct ComposerView: View {
     @State private var text = ""
     @State private var urgent = false
     @State private var deceasedWarning = false
+    @State private var audience = "everyone"
+    @State private var adultsOnly = false
     @State private var busy = false
     @State private var error: String?
     @State private var resultMessage: LocalizedStringKey?
@@ -248,6 +250,17 @@ struct ComposerView: View {
                 } else {
                     Text("An Elder reviews posts before they appear in the community.")
                 }
+            }
+
+            Section {
+                Picker("Who can see this", selection: $audience) {
+                    Text("Everyone").tag("everyone")
+                    Text("Women only").tag("female")
+                    Text("Men only").tag("male")
+                }
+                Toggle("Adults only (18+)", isOn: $adultsOnly)
+            } footer: {
+                Text("For women's and men's business, and content not suitable for young people.")
             }
 
             if isElder {
@@ -282,6 +295,13 @@ struct ComposerView: View {
         }
     }
 
+    private var options: PostOptions {
+        PostOptions(urgent: isElder && urgent,
+                    deceasedWarning: isElder && deceasedWarning,
+                    restrictGender: audience == "everyone" ? nil : audience,
+                    minAge: adultsOnly ? 18 : nil)
+    }
+
     private func submit() async {
         busy = true; error = nil
         defer { busy = false }
@@ -294,12 +314,14 @@ struct ComposerView: View {
         if network.isOnline && !network.isSatelliteMode {
             struct Body: Encodable {
                 let body: String; let title: String?; let kind: String; let clientMutationId: String
-                let urgent: Bool?; let deceasedWarning: Bool?
+                let urgent: Bool?; let deceasedWarning: Bool?; let restrictGender: String?; let minAge: Int?
             }
+            let o = options
             do {
                 let post: Post = try await env.api.post("/api/groups/\(groupId)/posts", Body(
                     body: body, title: trimmedTitle.isEmpty ? nil : trimmedTitle, kind: kind, clientMutationId: cmid,
-                    urgent: isElder ? urgent : nil, deceasedWarning: isElder ? deceasedWarning : nil))
+                    urgent: isElder ? o.urgent : nil, deceasedWarning: isElder ? o.deceasedWarning : nil,
+                    restrictGender: o.restrictGender, minAge: o.minAge))
                 env.cache.upsert(post: post, profileId: pid)
                 try? env.container.mainContext.save()
                 resultMessage = post.isPending ? "Waiting for Elder approval. It will appear once an Elder approves it." : "Your post is live."
@@ -311,7 +333,7 @@ struct ComposerView: View {
                 return
             }
         }
-        env.sync.enqueue(.createPost(groupId: groupId, body: body, title: trimmedTitle.isEmpty ? nil : trimmedTitle, kind: kind))
+        env.sync.enqueue(.createPost(groupId: groupId, body: body, title: trimmedTitle.isEmpty ? nil : trimmedTitle, kind: kind, options: options))
         resultMessage = "Saved on this phone. It will be sent for Elder approval when you're back in coverage."
     }
 }

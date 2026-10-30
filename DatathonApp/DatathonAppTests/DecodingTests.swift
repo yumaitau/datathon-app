@@ -29,6 +29,27 @@ struct DecodingTests {
         #expect(post.myReactions == ["heart"])
     }
 
+    @Test func decodesCommentReactionsAndMemberList() throws {
+        let comment = """
+        {"id":"c1","author":{"id":"u1","name":"Leah"},"body":"Count me in","parentCommentId":null,"status":"published",
+         "reactions":{"like":2,"heart":0,"thinking_of_you":1},"myReactions":["like"],
+         "createdAt":"2026-10-30T01:02:03.456Z","replies":[]}
+        """
+        let c = try JSONDecoder.api.decode(DatathonApp.Comment.self, from: Data(comment.utf8))
+        #expect(c.reactions?[.like] == 2)
+        #expect(c.myReactions == ["like"])
+
+        let members = """
+        [{"id":"m1","user":{"id":"u1","name":"Leah Thompson","isMinor":false},"role":"member","canTranslate":true,
+          "joinedAt":"2026-05-01T00:00:00.000Z"},
+         {"id":"m2","user":{"id":"u2","name":"Aunty Grace Walker","isMinor":false},"role":"elder","canTranslate":false,
+          "joinedAt":"2026-04-01T00:00:00.000Z"}]
+        """
+        let list = try JSONDecoder.api.decode([GroupMember].self, from: Data(members.utf8))
+        #expect(list.first?.canTranslate == true)
+        #expect(list.last?.isElder == true)
+    }
+
     @Test func decodesLiteSyncResponse() throws {
         let json = """
         {"cursor":"c2","serverTime":"2026-10-30T01:00:00.000Z","lite":true,

@@ -40,8 +40,10 @@ struct CommentsSection: View {
     @State private var draft = ""
     @State private var replyTo: Comment?
     @State private var reporting: Comment?
+    /// Reaction state changed on this screen since the thread was fetched, keyed by comment id;
+    /// everything else comes from the server's counts on each comment.
     @State private var commentReactions: [String: ReactionCounts] = [:]
-    @State private var myCommentReactions: Set<String> = []
+    @State private var myCommentReactions: [String: Set<String>] = [:]
     @State private var error: String?
     @State private var reportedNotice = false
 
@@ -134,28 +136,32 @@ struct CommentsSection: View {
                 } else {
                     Text(c.body)
                     HStack(spacing: 10) {
-                        ReactionBar(counts: commentReactions[c.id] ?? .zero, mine: myCommentReactions.filter { $0.hasPrefix(c.id) }
-                            .reduce(into: Set<String>()) { $0.insert(String($1.dropFirst(c.id.count + 1))) }, compact: true) { kind in
+                        ReactionBar(counts: counts(c), mine: mine(c), compact: true) { kind in
                             Task { await react(c, kind: kind) }
                         }
                         Spacer()
-                        Menu {
-                            if commentsEnabled && !threadLocked {
-                                Button { replyTo = isReply ? topLevel(of: c) : c } label: { Label("Reply", systemImage: "arrowshape.turn.up.left") }
-                            }
-                            Button { reporting = c } label: { Label("Report", systemImage: "flag") }
-                            if isElder {
-                                Button(role: .destructive) { Task { await hide(c) } } label: { Label("Hide comment", systemImage: "eye.slash") }
-                            }
-                        } label: {
-                            Image(systemName: "ellipsis").frame(minWidth: 32, minHeight: 32)
-                        }
-                        .accessibilityLabel(Text("Comment actions"))
+                        actionsMenu(c, isReply: isReply)
                     }
                 }
             }
         }
         .padding(.vertical, 2)
+    }
+
+    /// Reply (when the thread is open), report, and Elder hide.
+    private func actionsMenu(_ c: Comment, isReply: Bool) -> some View {
+        Menu {
+            if commentsEnabled && !threadLocked {
+                Button { replyTo = isReply ? topLevel(of: c) : c } label: { Label("Reply", systemImage: "arrowshape.turn.up.left") }
+            }
+            Button { reporting = c } label: { Label("Report", systemImage: "flag") }
+            if isElder {
+                Button(role: .destructive) { Task { await hide(c) } } label: { Label("Hide comment", systemImage: "eye.slash") }
+            }
+        } label: {
+            Image(systemName: "ellipsis").frame(minWidth: 32, minHeight: 32)
+        }
+        .accessibilityLabel(Text("Comment actions"))
     }
 
     private var composer: some View {
@@ -180,6 +186,9 @@ struct CommentsSection: View {
             }
         }
     }
+
+    private func counts(_ c: Comment) -> ReactionCounts { commentReactions[c.id] ?? c.reactions ?? .zero }
+    private func mine(_ c: Comment) -> Set<String> { myCommentReactions[c.id] ?? Set(c.myReactions ?? []) }
 
     private func topLevel(of reply: Comment) -> Comment? {
         comments.first { $0.id == reply.parentCommentId } ?? reply
@@ -207,6 +216,8 @@ struct CommentsSection: View {
             let list: [Comment] = try await env.api.get(target.path)
             env.cache.upsert(list, profileId: pid, kind: CacheKind.comments, id: target.cacheId, sortDate: .now)
             try? env.container.mainContext.save()
+            commentReactions = [:]
+            myCommentReactions = [:]
             error = nil
         } catch let e as APIError where e.isOffline {
         } catch {
@@ -215,13 +226,14 @@ struct CommentsSection: View {
     }
 
     private func react(_ c: Comment, kind: ReactionKind) async {
-        let key = "\(c.id):\(kind.rawValue)"
         if canLoad {
             struct Body: Encodable { let targetType: String; let targetId: String; let kind: String }
             do {
                 let result: ReactionResult = try await env.api.post("/api/reactions", Body(targetType: "comment", targetId: c.id, kind: kind.rawValue))
                 commentReactions[c.id] = result.counts
-                if result.active { myCommentReactions.insert(key) } else { myCommentReactions.remove(key) }
+                var set = mine(c)
+                if result.active { set.insert(kind.rawValue) } else { set.remove(kind.rawValue) }
+                myCommentReactions[c.id] = set
                 return
             } catch let e as APIError where !e.isOffline {
                 error = e.localizedDescription
@@ -230,10 +242,12 @@ struct CommentsSection: View {
         }
         // Offline: queue the toggle and reflect it locally.
         sync.enqueue(.reaction(targetType: "comment", targetId: c.id, kind: kind.rawValue))
-        var counts = commentReactions[c.id] ?? .zero
-        if myCommentReactions.remove(key) != nil { counts[kind] = max(0, counts[kind] - 1) }
-        else { myCommentReactions.insert(key); counts[kind] += 1 }
-        commentReactions[c.id] = counts
+        var updated = counts(c)
+        var set = mine(c)
+        if set.remove(kind.rawValue) != nil { updated[kind] = max(0, updated[kind] - 1) }
+        else { set.insert(kind.rawValue); updated[kind] += 1 }
+        commentReactions[c.id] = updated
+        myCommentReactions[c.id] = set
     }
 
     private func report(_ c: Comment, reason: String) async {

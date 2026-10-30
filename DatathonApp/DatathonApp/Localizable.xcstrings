@@ -1,6 +1,176 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "Adults only (18+)": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Ádúlts óñlý (18+)⟧"
+          }
+        }
+      }
+    },
+    "Everyone": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Évérýóñé⟧"
+          }
+        }
+      }
+    },
+    "For women's and men's business, and content not suitable for young people.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Fór wóméñ's áñd méñ's búsíñéss, áñd çóñtéñt ñót súítáblé fór ýóúñg péóplé.⟧"
+          }
+        }
+      }
+    },
+    "Keep comment": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Kéép çómméñt⟧"
+          }
+        }
+      }
+    },
+    "Members": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Mémbérs⟧"
+          }
+        }
+      }
+    },
+    "Men only": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Méñ óñlý⟧"
+          }
+        }
+      }
+    },
+    "Who can see this": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Whó çáñ séé thís⟧"
+          }
+        }
+      }
+    },
+    "Women only": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Wóméñ óñlý⟧"
+          }
+        }
+      }
+    },
+    "Language custodians draft translations of your community's languages. Elders approve them before anyone sees them.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Láñgúágé çústódíáñs dráft tráñslátíóñs óf ýóúr çómmúñítý's láñgúágés. Éldérs áppróvé thém béfóré áñýóñé séés thém.⟧"
+          }
+        }
+      }
+    },
+    "Make language custodian": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Máké láñgúágé çústódíáñ⟧"
+          }
+        }
+      }
+    },
+    "Managing members needs normal coverage.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Máñágíñg mémbérs ñééds ñórmál çóvérágé.⟧"
+          }
+        }
+      }
+    },
+    "Remove this person from the group?": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Rémóvé thís pérsóñ fróm thé gróúp?⟧"
+          }
+        }
+      }
+    },
+    "Search members": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Séárçh mémbérs⟧"
+          }
+        }
+      }
+    },
+    "Stop language custodian": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Stóp láñgúágé çústódíáñ⟧"
+          }
+        }
+      }
+    },
+    "They stop seeing %@. They can ask to join again.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Théý stóp sééíñg %@. Théý çáñ ásk tó jóíñ ágáíñ.⟧"
+          }
+        }
+      }
+    },
+    "%lld members": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦%lld mémbérs⟧"
+          }
+        }
+      }
+    },
+    "Language custodian": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Láñgúágé çústódíáñ⟧"
+          }
+        }
+      }
+    },
     "%@ would like to send you appointment details and reminders in MyMob.": {
       "localizations": {
         "fr": {
