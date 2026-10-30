@@ -156,7 +156,7 @@ struct InitialsAvatar: View {
         Circle()
             .fill(Color.accentColor.opacity(0.18))
             .frame(width: size, height: size)
-            .overlay { Text(initials).font(.headline).foregroundStyle(Color.accentColor) }
+            .overlay { Text(initials).font(.system(size: size * 0.38, weight: .semibold)).foregroundStyle(Color.accentColor) }
             .accessibilityHidden(true)
     }
 }

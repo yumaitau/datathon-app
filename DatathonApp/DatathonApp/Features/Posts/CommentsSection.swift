@@ -29,6 +29,10 @@ struct CommentsSection: View {
     let groupId: String
     let commentsEnabled: Bool
     let threadLocked: Bool
+    /// Bump to move focus to the comment box (the post's "Comment" button).
+    var focusTrigger = 0
+
+    static let composerId = "comment-composer"
 
     @Environment(AppEnvironment.self) private var env
     @Environment(ProfileStore.self) private var profiles
@@ -46,12 +50,14 @@ struct CommentsSection: View {
     @State private var myCommentReactions: [String: Set<String>] = [:]
     @State private var error: String?
     @State private var reportedNotice = false
+    @FocusState private var composerFocused: Bool
 
-    init(target: CommentTarget, groupId: String, commentsEnabled: Bool, threadLocked: Bool) {
+    init(target: CommentTarget, groupId: String, commentsEnabled: Bool, threadLocked: Bool, focusTrigger: Int = 0) {
         self.target = target
         self.groupId = groupId
         self.commentsEnabled = commentsEnabled
         self.threadLocked = threadLocked
+        self.focusTrigger = focusTrigger
         let pid = AppEnvironment.shared.profiles.activeProfileId ?? ""
         let key = CachedItem.key(profileId: pid, kind: CacheKind.comments, entityId: target.cacheId)
         let tid = target.id
@@ -69,11 +75,15 @@ struct CommentsSection: View {
         Section {
             if !commentsEnabled {
                 Label("Comments are turned off for this post.", systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
+                    .listRowSeparator(.hidden)
             } else {
                 if comments.isEmpty && pending.isEmpty {
-                    Text(canLoad ? LocalizedStringKey("No comments yet.") : LocalizedStringKey("Comments will load when you have normal coverage."))
+                    Text(canLoad ? LocalizedStringKey("No comments yet. Start the conversation.") : LocalizedStringKey("Comments will load when you have normal coverage."))
+                        .font(.subheadline)
                         .foregroundStyle(.secondary)
+                        .listRowSeparator(.hidden)
                 }
                 ForEach(comments) { comment in
                     commentRow(comment, isReply: false)
@@ -82,23 +92,17 @@ struct CommentsSection: View {
                     }
                 }
                 ForEach(pending) { m in
-                    let body = m.payloadValue["body"] ?? ""
-                    HStack(alignment: .top) {
-                        if m.payloadValue["parentCommentId"] != nil { Spacer().frame(width: 24) }
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(profiles.activeProfile?.name ?? "").font(.caption.weight(.semibold))
-                            Text(body)
-                            Label("Waiting to send", systemImage: "clock").font(.caption).foregroundStyle(.secondary)
-                        }
-                    }
-                    .opacity(0.7)
+                    pendingRow(body: m.payloadValue["body"] ?? "", isReply: m.payloadValue["parentCommentId"] != nil)
                 }
                 if threadLocked {
                     Label("An Elder has locked this thread.", systemImage: "lock")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
+                        .listRowSeparator(.hidden)
                 } else {
                     composer
+                        .id(Self.composerId)
+                        .listRowSeparator(.hidden)
                 }
             }
             ErrorBanner(message: error)
@@ -106,6 +110,7 @@ struct CommentsSection: View {
             Text("Comments")
         }
         .task(id: target) { await load() }
+        .onChange(of: focusTrigger) { composerFocused = true }
         .confirmationDialog("Report this comment?", isPresented: Binding(get: { reporting != nil }, set: { if !$0 { reporting = nil } }), titleVisibility: .visible) {
             ForEach(["Disrespectful or hurtful", "Shares private information", "Cultural concern", "Something else"], id: \.self) { reason in
                 Button(LocalizedStringKey(reason)) {
@@ -122,44 +127,113 @@ struct CommentsSection: View {
         }
     }
 
-    @ViewBuilder
     private func commentRow(_ c: Comment, isReply: Bool) -> some View {
         HStack(alignment: .top, spacing: 8) {
-            if isReply { Rectangle().fill(Color(.separator)).frame(width: 2).padding(.leading, 8).padding(.trailing, 10) }
+            InitialsAvatar(name: c.author.name, size: isReply ? 28 : 34)
             VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text(c.author.name).font(.caption.weight(.semibold))
-                    Text(c.createdAt, format: .relative(presentation: .named)).font(.caption2).foregroundStyle(.secondary)
-                }
                 if c.status == "hidden" || c.status == "removed" {
-                    Text("Comment hidden by an Elder").italic().foregroundStyle(.secondary)
+                    Text("Comment hidden by an Elder")
+                        .font(.subheadline)
+                        .italic()
+                        .foregroundStyle(.secondary)
+                        .bubble()
                 } else {
-                    Text(c.body)
-                    HStack(spacing: 10) {
-                        ReactionBar(counts: counts(c), mine: mine(c), compact: true) { kind in
-                            Task { await react(c, kind: kind) }
-                        }
-                        Spacer()
-                        actionsMenu(c, isReply: isReply)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(c.author.name).font(.subheadline.weight(.semibold))
+                        Text(c.body).font(.subheadline)
                     }
+                    .bubble()
+                    HStack(spacing: 16) {
+                        Text(c.createdAt, format: .relative(presentation: .named))
+                        likeButton(c)
+                        if commentsEnabled && !threadLocked {
+                            Button("Reply") {
+                                replyTo = isReply ? topLevel(of: c) : c
+                                composerFocused = true
+                            }
+                        }
+                        Spacer(minLength: 0)
+                        reactionSummary(counts(c))
+                        actionsMenu(c)
+                    }
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .buttonStyle(.plain)
+                    .padding(.leading, 12)
                 }
             }
         }
+        .padding(.leading, isReply ? 42 : 0)
         .padding(.vertical, 2)
+        .listRowSeparator(.hidden)
     }
 
-    /// Reply (when the thread is open), report, and Elder hide.
-    private func actionsMenu(_ c: Comment, isReply: Bool) -> some View {
-        Menu {
-            if commentsEnabled && !threadLocked {
-                Button { replyTo = isReply ? topLevel(of: c) : c } label: { Label("Reply", systemImage: "arrowshape.turn.up.left") }
+    private func pendingRow(body: String, isReply: Bool) -> some View {
+        HStack(alignment: .top, spacing: 8) {
+            InitialsAvatar(name: profiles.activeProfile?.name ?? "", size: isReply ? 28 : 34)
+            VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(profiles.activeProfile?.name ?? "").font(.subheadline.weight(.semibold))
+                    Text(body).font(.subheadline)
+                }
+                .bubble()
+                Label("Waiting to send", systemImage: "clock")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .padding(.leading, 12)
             }
+        }
+        .padding(.leading, isReply ? 42 : 0)
+        .opacity(0.7)
+        .listRowSeparator(.hidden)
+    }
+
+    /// Tap to Like; touch and hold for Heart or Thinking of you. One reaction per person.
+    private func likeButton(_ c: Comment) -> some View {
+        let current = ReactionKind.allCases.first { mine(c).contains($0.rawValue) }
+        return Button { Task { await choose(current == nil ? .like : nil, on: c) } } label: {
+            Text(current?.label ?? "Like")
+                .foregroundStyle(current?.tint ?? Color.secondary)
+        }
+        .contextMenu {
+            ForEach(ReactionKind.allCases, id: \.self) { kind in
+                Button { Task { await choose(current == kind ? nil : kind, on: c) } } label: {
+                    Label(kind.label, systemImage: kind.symbol(active: current == kind))
+                }
+            }
+        }
+        .accessibilityAddTraits(current != nil ? .isSelected : [])
+        .accessibilityActions {
+            ForEach(ReactionKind.allCases, id: \.self) { kind in
+                Button(kind.label) { Task { await choose(current == kind ? nil : kind, on: c) } }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func reactionSummary(_ counts: ReactionCounts) -> some View {
+        let total = counts.like + counts.heart + counts.thinkingOfYou
+        if total > 0 {
+            HStack(spacing: 2) {
+                ForEach(ReactionKind.allCases.filter { counts[$0] > 0 }, id: \.self) { kind in
+                    Image(systemName: kind.symbol(active: true)).foregroundStyle(kind.tint)
+                }
+                Text("\(total)").monospacedDigit()
+            }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text("^[\(total) reaction](inflect: true)"))
+        }
+    }
+
+    /// Report, and Elder hide.
+    private func actionsMenu(_ c: Comment) -> some View {
+        Menu {
             Button { reporting = c } label: { Label("Report", systemImage: "flag") }
             if isElder {
                 Button(role: .destructive) { Task { await hide(c) } } label: { Label("Hide comment", systemImage: "eye.slash") }
             }
         } label: {
-            Image(systemName: "ellipsis").frame(minWidth: 32, minHeight: 32)
+            Image(systemName: "ellipsis").frame(minWidth: 32, minHeight: 32).contentShape(Rectangle())
         }
         .accessibilityLabel(Text("Comment actions"))
     }
@@ -170,21 +244,32 @@ struct CommentsSection: View {
                 HStack {
                     Text("Replying to \(replyTo.author.name)").font(.caption).foregroundStyle(.secondary)
                     Spacer()
-                    Button("Cancel") { self.replyTo = nil }.font(.caption)
+                    Button("Cancel") { self.replyTo = nil }.font(.caption).buttonStyle(.plain)
                 }
+                .padding(.leading, 42)
             }
-            HStack(alignment: .bottom) {
-                TextField("Add a comment", text: $draft, axis: .vertical)
+            HStack(alignment: .bottom, spacing: 8) {
+                InitialsAvatar(name: profiles.activeProfile?.name ?? "", size: 34)
+                TextField("Write a comment…", text: $draft, axis: .vertical)
                     .lineLimit(1...5)
+                    .focused($composerFocused)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 8)
+                    .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 20))
                 Button {
                     send()
                 } label: {
-                    Image(systemName: "arrow.up.circle.fill").font(.title2)
+                    Image(systemName: "paperplane.fill")
+                        .font(.title3)
+                        .frame(width: 36, height: 36)
                 }
+                .buttonStyle(.plain)
+                .foregroundStyle(Color.accentColor)
                 .disabled(draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 .accessibilityLabel(Text("Send comment"))
             }
         }
+        .padding(.vertical, 4)
     }
 
     private func counts(_ c: Comment) -> ReactionCounts { commentReactions[c.id] ?? c.reactions ?? .zero }
@@ -250,6 +335,14 @@ struct CommentsSection: View {
         myCommentReactions[c.id] = set
     }
 
+    /// Switches this person's reaction on a comment to `kind`, or clears it.
+    private func choose(_ kind: ReactionKind?, on c: Comment) async {
+        for old in ReactionKind.allCases where mine(c).contains(old.rawValue) && old != kind {
+            await react(c, kind: old)
+        }
+        if let kind, !mine(c).contains(kind.rawValue) { await react(c, kind: kind) }
+    }
+
     private func report(_ c: Comment, reason: String) async {
         do {
             let _: OKResponse = try await env.api.post("/api/comments/\(c.id)/report", ["reason": reason])
@@ -263,5 +356,14 @@ struct CommentsSection: View {
             let _: OKResponse = try await env.api.post("/api/comments/\(c.id)/hide")
             await load()
         } catch { self.error = error.localizedDescription }
+    }
+}
+
+private extension View {
+    /// Rounded grey speech bubble behind a comment.
+    func bubble() -> some View {
+        padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 18))
     }
 }

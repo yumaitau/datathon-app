@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// Elder review queue for one group: join requests, posts, clinic access and reported comments.
+/// Elder review queue for one group: join requests, clinic access and reported comments.
+/// Posts publish straight away; Elders moderate them from the post's ••• menu.
 struct ModerationView: View {
     let groupId: String
     let groupName: String
@@ -28,14 +29,13 @@ struct ModerationView: View {
             }
 
             if let queue {
-                if queue.memberships.isEmpty && queue.posts.isEmpty && queue.providerRequests.isEmpty && queue.reports.isEmpty {
+                if queue.memberships.isEmpty && queue.providerRequests.isEmpty && queue.reports.isEmpty {
                     Section {
                         ContentUnavailableView("All caught up", systemImage: "checkmark.circle",
                                                description: Text("Nothing is waiting for your review."))
                     }
                 }
                 joinRequests(queue.memberships)
-                posts(queue.posts)
                 providers(queue.providerRequests)
                 reports(queue.reports)
             } else if network.isOnline {
@@ -76,35 +76,6 @@ struct ModerationView: View {
                 Text("Join requests")
             } footer: {
                 Text("Wants to join \(groupName).")
-            }
-        }
-    }
-
-    @ViewBuilder
-    private func posts(_ posts: [Post]) -> some View {
-        if !posts.isEmpty {
-            Section("Posts waiting for approval") {
-                ForEach(posts) { p in
-                    VStack(alignment: .leading, spacing: 8) {
-                        PostKindBadges(post: p)
-                        if let t = p.title, !t.isEmpty { Text(t).font(.headline) }
-                        Text(p.body).font(.subheadline)
-                        Text(p.author.name).font(.caption).foregroundStyle(.secondary)
-                        HStack {
-                            Button("Approve") { run(p.id) { try await act("/api/posts/\(p.id)/approve") } }
-                                .buttonStyle(.borderedProminent)
-                            Button {
-                                run(p.id) { try await act("/api/posts/\(p.id)/approve", body: ["pinned": true]) }
-                            } label: { Label("Approve & pin", systemImage: "pin") }
-                                .buttonStyle(.bordered)
-                            Spacer()
-                            Button("Reject", role: .destructive) { run(p.id) { try await act("/api/posts/\(p.id)/reject") } }
-                                .buttonStyle(.bordered)
-                        }
-                        .disabled(working.contains(p.id))
-                    }
-                    .padding(.vertical, 4)
-                }
             }
         }
     }
@@ -178,10 +149,6 @@ struct ModerationView: View {
                 await load()
             } catch { self.error = error.localizedDescription }
         }
-    }
-
-    private func act(_ path: String, body: [String: Bool]) async throws {
-        let _: OKResponse = try await env.api.post(path, body)
     }
 
     private func act(_ path: String, body: [String: String] = [:]) async throws {

@@ -172,13 +172,14 @@ struct SyncEngineTests {
         #expect(event.rsvpCounts == RSVPCounts(going: 5, maybe: 3, no: 0))
     }
 
-    @Test func offlinePostShowsAsPendingThenTakesServerId() async throws {
+    @Test func offlinePostShowsAsSendingThenTakesServerId() async throws {
         let h = try SyncHarness()
         h.online = false
         let pending = try #require(h.engine.enqueue(.createPost(groupId: "g1", body: "Footy training moved", title: nil, kind: "announcement"), flushNow: false))
         let localId = "local-\(pending.clientMutationId)"
         let local = try #require(h.cache.value(Post.self, profileId: h.profileId, kind: CacheKind.post, id: localId))
-        #expect(local.isPending)
+        #expect(local.isSending)
+        #expect(local.status == "published")
         #expect(local.author.name == "Jordan")
 
         h.online = true
@@ -187,7 +188,7 @@ struct SyncEngineTests {
 
         #expect(h.cache.item(profileId: h.profileId, kind: CacheKind.post, id: localId) == nil)
         let synced = try #require(h.cache.value(Post.self, profileId: h.profileId, kind: CacheKind.post, id: "post-99"))
-        #expect(synced.isPending)
+        #expect(!synced.isSending)
         #expect(synced.body == "Footy training moved")
     }
 

@@ -28,45 +28,33 @@ struct GroupFeedView: View {
 
     var body: some View {
         let posts = items.filter { $0.kind == CacheKind.post }.compactMap { $0.decode(Post.self) }
-        let pinned = posts.filter { $0.pinned && !$0.isPending }
-        let mine = posts.filter { $0.isPending }
-        let others = posts.filter { !$0.pinned && !$0.isPending && $0.status == "published" }
+            .filter { $0.status == "published" }
+        // Pinned posts lead; everything else is newest first (the query's sort order).
+        let feed = posts.filter(\.pinned) + posts.filter { !$0.pinned }
         let events = items.filter { $0.kind == CacheKind.event }.compactMap { $0.decode(Event.self) }
             .filter { !$0.cancelled && ($0.endsAt ?? $0.startsAt) > .now.addingTimeInterval(-6 * 3600) }
             .sorted { $0.startsAt < $1.startsAt }
 
-        List {
-            if let error { Section { ErrorBanner(message: error) } }
-
-            if !pinned.isEmpty {
-                Section {
-                    ForEach(pinned) { PostLink(post: $0) }
-                } header: {
-                    Label("Pinned", systemImage: "pin.fill")
+        ScrollView {
+            LazyVStack(spacing: 8) {
+                if let error {
+                    ErrorBanner(message: error)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 8)
                 }
-            }
-
-            if !mine.isEmpty {
-                Section("Waiting for Elder approval") {
-                    ForEach(mine) { PostLink(post: $0) }
+                composerPrompt
+                if !events.isEmpty { eventsStrip(events) }
+                if feed.isEmpty {
+                    ContentUnavailableView("No posts yet", systemImage: "text.bubble",
+                                           description: Text("Be the first to share something with the community."))
+                        .padding(.vertical, 32)
                 }
+                ForEach(feed) { PostCard(post: $0) }
             }
-
-            if !events.isEmpty {
-                Section("Upcoming events") {
-                    ForEach(events) { e in
-                        NavigationLink(value: FeedRoute.event(e.id)) { EventRow(event: e) }
-                    }
-                }
-            }
-
-            Section("Announcements") {
-                if others.isEmpty {
-                    Text("No announcements yet.").foregroundStyle(.secondary)
-                }
-                ForEach(others) { PostLink(post: $0) }
-            }
+            .padding(.bottom, 16)
         }
+        .background(Color(.systemGroupedBackground))
         .navigationTitle(membership.groupName)
         .navigationDestination(for: FeedRoute.self) { route in
             switch route {
@@ -83,15 +71,52 @@ struct GroupFeedView: View {
                     }
                 }
             }
-            ToolbarItem(placement: .primaryAction) {
-                Button { composing = true } label: { Label("New post", systemImage: "square.and.pencil") }
-            }
         }
         .sheet(isPresented: $composing) {
             NavigationStack { ComposerView(groupId: membership.groupId, isElder: isElder) }
         }
         .refreshable { await load() }
         .task { await load() }
+    }
+
+    /// "What's on your mind?" box that opens the composer.
+    private var composerPrompt: some View {
+        Button { composing = true } label: {
+            HStack(spacing: 10) {
+                InitialsAvatar(name: profiles.activeProfile?.name ?? "", size: 40)
+                Text("What's on your mind?")
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
+                    .padding(.horizontal, 14)
+                    .overlay(Capsule().stroke(Color(.separator)))
+                Image(systemName: "square.and.pencil")
+                    .font(.title3)
+                    .foregroundStyle(Color.accentColor)
+                    .accessibilityHidden(true)
+            }
+            .padding(12)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .background(Color(.secondarySystemGroupedBackground))
+        .accessibilityLabel(Text("New post"))
+    }
+
+    private func eventsStrip(_ events: [Event]) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Upcoming events").font(.headline).padding(.horizontal, 16)
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 10) {
+                    ForEach(events) { e in
+                        NavigationLink(value: FeedRoute.event(e.id)) { EventCard(event: e) }
+                            .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, 16)
+            }
+        }
+        .padding(.vertical, 12)
+        .background(Color(.secondarySystemGroupedBackground))
     }
 
     private func load() async {
@@ -111,96 +136,55 @@ struct GroupFeedView: View {
     }
 }
 
-private struct PostLink: View {
+struct PostKindBadges: View {
     let post: Post
     var body: some View {
-        NavigationLink(value: FeedRoute.post(post.id)) { PostRow(post: post) }
-            .disabled(post.id.hasPrefix("local-"))
+        if post.isSorryBusiness || post.urgent == true || post.restrictGender != nil || post.minAge != nil {
+            HStack(spacing: 6) {
+                if post.isSorryBusiness {
+                    Badge(text: "Sorry business", tint: .gray)
+                } else if post.urgent == true {
+                    Badge(text: "Urgent", systemImage: "exclamationmark.circle", tint: .red)
+                }
+                if let gender = post.restrictGender {
+                    Badge(text: gender == "female" ? "Women only" : gender == "male" ? "Men only" : "Restricted",
+                          systemImage: "person.badge.shield.checkmark", tint: .purple)
+                }
+                if let age = post.minAge {
+                    Badge(text: "\(age)+ only", tint: .purple)
+                }
+            }
+        }
     }
 }
 
-struct PostRow: View {
-    let post: Post
-    @Environment(AppSettings.self) private var settings
-
+/// Event tile for the feed's horizontal "Upcoming events" strip.
+struct EventCard: View {
+    let event: Event
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 6) {
-                PostKindBadges(post: post)
-                Spacer()
-                Text(post.createdAt, format: .relative(presentation: .named))
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            if let title = post.title, !title.isEmpty {
-                Text(title).font(.headline)
-            }
-            if post.deceasedWarning {
-                Label("Cultural warning. Tap to view.", systemImage: "eye.slash")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            } else {
-                Text(post.body).font(.subheadline).lineLimit(4)
-            }
-            HStack(spacing: 12) {
-                Text(post.author.name)
-                if post.isPending {
-                    Label("Waiting for Elder approval", systemImage: "hourglass")
-                        .foregroundStyle(.orange)
-                } else {
-                    if let c = post.commentCount, c > 0, post.commentsEnabled {
-                        Label("\(c)", systemImage: "bubble.left")
-                    }
-                    if let r = post.reactions, r.like + r.heart + r.thinkingOfYou > 0 {
-                        Label("\(r.like + r.heart + r.thinkingOfYou)", systemImage: "heart")
-                    }
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top) {
+                VStack(spacing: 0) {
+                    Text(event.startsAt, format: .dateTime.month(.abbreviated)).font(.caption2.weight(.bold)).textCase(.uppercase)
+                    Text(event.startsAt, format: .dateTime.day()).font(.title3.bold())
                 }
+                .frame(width: 44, height: 44)
+                .foregroundStyle(Color.accentColor)
+                .background(Color.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
+                Spacer()
+                if let rsvp = event.myRsvp { RSVPBadge(response: rsvp) }
+            }
+            Text(event.title).font(.subheadline.weight(.semibold)).lineLimit(2, reservesSpace: true)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(event.startsAt, format: .dateTime.weekday(.wide).hour().minute())
+                Text(event.location).lineLimit(1)
             }
             .font(.caption)
             .foregroundStyle(.secondary)
         }
-        .padding(.vertical, 4)
-        .listRowBackground(post.isSorryBusiness ? Color(.systemGray6) : nil)
-    }
-}
-
-struct PostKindBadges: View {
-    let post: Post
-    var body: some View {
-        HStack(spacing: 6) {
-            if post.isSorryBusiness {
-                Badge(text: "Sorry business", tint: .gray)
-            } else if post.urgent == true {
-                Badge(text: "Urgent", systemImage: "exclamationmark.circle", tint: .red)
-            }
-            if post.pinned { Badge(text: "Pinned", systemImage: "pin.fill") }
-            if post.restrictGender != nil || post.minAge != nil {
-                Badge(text: "Restricted", systemImage: "person.badge.shield.checkmark", tint: .purple)
-            }
-        }
-    }
-}
-
-struct EventRow: View {
-    let event: Event
-    var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            VStack {
-                Text(event.startsAt, format: .dateTime.month(.abbreviated)).font(.caption.weight(.semibold)).textCase(.uppercase)
-                Text(event.startsAt, format: .dateTime.day()).font(.title2.bold())
-            }
-            .frame(minWidth: 44)
-            .foregroundStyle(Color.accentColor)
-            VStack(alignment: .leading, spacing: 3) {
-                Text(event.title).font(.headline)
-                Text(event.startsAt, format: .dateTime.weekday(.wide).hour().minute()).font(.subheadline)
-                Text(event.location).font(.caption).foregroundStyle(.secondary)
-                if let rsvp = event.myRsvp {
-                    RSVPBadge(response: rsvp)
-                }
-            }
-        }
-        .padding(.vertical, 2)
+        .padding(12)
+        .frame(width: 210, alignment: .leading)
+        .background(Color(.systemGroupedBackground), in: RoundedRectangle(cornerRadius: 14))
         .accessibilityElement(children: .combine)
     }
 }
@@ -220,9 +204,11 @@ struct ComposerView: View {
     let groupId: String
     let isElder: Bool
     @Environment(AppEnvironment.self) private var env
+    @Environment(ProfileStore.self) private var profiles
     @Environment(NetworkMonitor.self) private var network
     @Environment(\.dismiss) private var dismiss
-    @State private var kind = "announcement"
+    @FocusState private var bodyFocused: Bool
+    @State private var kind = "general"
     @State private var title = ""
     @State private var text = ""
     @State private var urgent = false
@@ -231,36 +217,50 @@ struct ComposerView: View {
     @State private var adultsOnly = false
     @State private var busy = false
     @State private var error: String?
-    @State private var resultMessage: LocalizedStringKey?
 
     var body: some View {
         Form {
             Section {
-                Picker("Type", selection: $kind) {
-                    Text("Announcement").tag("announcement")
-                    Text("General").tag("general")
-                    if isElder { Text("Sorry business").tag("sorry_business") }
+                HStack(spacing: 10) {
+                    InitialsAvatar(name: profiles.activeProfile?.name ?? "", size: 44)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(profiles.activeProfile?.name ?? "").font(.subheadline.weight(.semibold))
+                        Menu {
+                            Picker("Who can see this", selection: $audience) {
+                                Label("Everyone", systemImage: "person.3").tag("everyone")
+                                Label("Women only", systemImage: "figure.stand.dress").tag("female")
+                                Label("Men only", systemImage: "figure.stand").tag("male")
+                            }
+                        } label: {
+                            Label(audienceLabel, systemImage: audience == "everyone" ? "person.3" : "person.badge.shield.checkmark")
+                                .font(.caption.weight(.semibold))
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color(.tertiarySystemFill), in: Capsule())
+                        }
+                        .accessibilityLabel(Text("Who can see this"))
+                    }
                 }
                 TextField("Title (optional)", text: $title)
-                TextField("What would you like to share?", text: $text, axis: .vertical)
-                    .lineLimit(4...12)
-            } footer: {
-                if isElder {
-                    Text("As an Elder, your posts publish straight away.")
-                } else {
-                    Text("An Elder reviews posts before they appear in the community.")
-                }
+                    .font(.headline)
+                TextField("What's on your mind?", text: $text, axis: .vertical)
+                    .lineLimit(5...14)
+                    .focused($bodyFocused)
             }
 
             Section {
-                Picker("Who can see this", selection: $audience) {
-                    Text("Everyone").tag("everyone")
-                    Text("Women only").tag("female")
-                    Text("Men only").tag("male")
+                Picker("Type", selection: $kind) {
+                    Text("General").tag("general")
+                    Text("Announcement").tag("announcement")
+                    if isElder { Text("Sorry business").tag("sorry_business") }
                 }
                 Toggle("Adults only (18+)", isOn: $adultsOnly)
             } footer: {
-                Text("For women's and men's business, and content not suitable for young people.")
+                if kind == "sorry_business" {
+                    Text("Sorry business notices are text only, with comments off by default.")
+                } else {
+                    Text("Your post goes up straight away. Elders can remove posts that aren't right for the community.")
+                }
             }
 
             if isElder {
@@ -270,28 +270,26 @@ struct ComposerView: View {
                 }
             }
 
-            if kind == "sorry_business" {
-                Section {
-                    Text("Sorry business notices are text only, with comments off by default.")
-                        .font(.footnote)
-                }
-            }
-
             if let error { Section { ErrorBanner(message: error) } }
         }
-        .localizedNavigationTitle("New post")
+        .localizedNavigationTitle("Create post")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear { bodyFocused = true }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
             ToolbarItem(placement: .confirmationAction) {
-                Button(isElder ? LocalizedStringKey("Publish") : LocalizedStringKey("Submit")) { Task { await submit() } }
+                Button("Post") { Task { await submit() } }
+                    .fontWeight(.semibold)
                     .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || busy)
             }
         }
-        .alert("Post submitted", isPresented: Binding(get: { resultMessage != nil }, set: { if !$0 { resultMessage = nil; dismiss() } })) {
-            Button("OK") {}
-        } message: {
-            if let resultMessage { Text(resultMessage) }
+    }
+
+    private var audienceLabel: LocalizedStringKey {
+        switch audience {
+        case "female": "Women only"
+        case "male": "Men only"
+        default: "Everyone"
         }
     }
 
@@ -310,7 +308,7 @@ struct ComposerView: View {
         let cmid = UUID().uuidString
         guard let pid = env.profiles.activeProfileId else { return }
 
-        // Online: post directly so Elder-only flags apply and we get the real status back.
+        // Online: post directly so Elder-only flags apply and the post appears with its real id.
         if network.isOnline && !network.isSatelliteMode {
             struct Body: Encodable {
                 let body: String; let title: String?; let kind: String; let clientMutationId: String
@@ -324,7 +322,7 @@ struct ComposerView: View {
                     restrictGender: o.restrictGender, minAge: o.minAge))
                 env.cache.upsert(post: post, profileId: pid)
                 try? env.container.mainContext.save()
-                resultMessage = post.isPending ? "Waiting for Elder approval. It will appear once an Elder approves it." : "Your post is live."
+                dismiss()
                 return
             } catch let e as APIError where e.isOffline {
                 // fall through to the offline queue
@@ -333,7 +331,8 @@ struct ComposerView: View {
                 return
             }
         }
+        // Offline: the post shows in the feed as "Waiting to send" until the queue flushes.
         env.sync.enqueue(.createPost(groupId: groupId, body: body, title: trimmedTitle.isEmpty ? nil : trimmedTitle, kind: kind, options: options))
-        resultMessage = "Saved on this phone. It will be sent for Elder approval when you're back in coverage."
+        dismiss()
     }
 }

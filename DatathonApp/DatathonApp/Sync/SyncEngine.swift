@@ -222,7 +222,7 @@ final class SyncEngine {
             let author = currentUser() ?? PersonRef(id: "me", name: String(localized: "You"))
             let post = Post(id: "local-\(clientMutationId)", groupId: groupId, groupName: nil, author: author,
                             kind: kind ?? "announcement", title: title, body: body, hasMedia: false, imageUrl: nil,
-                            status: "pending", pinned: false, urgent: options.urgent, restrictGender: options.restrictGender,
+                            status: "published", pinned: false, urgent: options.urgent, restrictGender: options.restrictGender,
                             minAge: options.minAge, deceasedWarning: options.deceasedWarning,
                             commentsEnabled: kind != "sorry_business", threadLocked: false, commentCount: 0,
                             reactions: .zero, myReactions: [], createdAt: .now, updatedAt: .now)

@@ -114,6 +114,8 @@ nonisolated struct Post: Codable, Hashable, Identifiable, Sendable {
     var updatedAt: Date?
 
     var isPending: Bool { status == "pending" }
+    /// Written on this phone and still waiting for the write queue to send it.
+    var isSending: Bool { id.hasPrefix("local-") }
     var isSorryBusiness: Bool { kind == "sorry_business" }
 }
 

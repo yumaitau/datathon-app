@@ -28,8 +28,8 @@ xcodebuild -project DatathonApp/DatathonApp.xcodeproj -scheme DatathonApp \
    "Waiting for approval".
 2. **Me → Switch person → Add a person** → Aunty Grace → Saltbush Creek → shield icon (**Elder review**)
    → Join requests → **Approve**.
-3. Switch to Jordan → Saltbush Creek → compose → Submit → "Waiting for Elder approval".
-   Switch to Grace → Elder review → **Approve & pin**.
+3. Switch to Jordan → Saltbush Creek → **What's on your mind?** → **Post**. It's live straight away.
+   Switch to Grace → the post's **•••** menu → **Pin to top** (or **Remove post**).
 4. Grace → Elder review → Clinic and service access → **Approve**.
 
 ## Demo flow B (clinic to patient)

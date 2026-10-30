@@ -310,16 +310,6 @@
         }
       }
     },
-    "Add a comment": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ádd á çómméñt⟧"
-          }
-        }
-      }
-    },
     "Add a person": {
       "localizations": {
         "fr": {
@@ -356,16 +346,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "⟦Áñ Éldér óf %@ wíll révíéw ýóúr réqúést.⟧"
-          }
-        }
-      }
-    },
-    "An Elder reviews posts before they appear in the community.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áñ Éldér révíéws pósts béfóré théý áppéár íñ thé çómmúñítý.⟧"
           }
         }
       }
@@ -410,16 +390,6 @@
         }
       }
     },
-    "Announcements": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áññóúñçéméñts⟧"
-          }
-        }
-      }
-    },
     "Appointment": {
       "localizations": {
         "fr": {
@@ -460,16 +430,6 @@
         }
       }
     },
-    "Approve & pin": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áppróvé & píñ⟧"
-          }
-        }
-      }
-    },
     "Approving lets this service post events to the group. It never gives them the group feed or anyone's health information.": {
       "localizations": {
         "fr": {
@@ -486,16 +446,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "⟦Áré ýóú góíñg?⟧"
-          }
-        }
-      }
-    },
-    "As an Elder, your posts publish straight away.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ás áñ Éldér, ýóúr pósts públísh stráíght áwáý.⟧"
           }
         }
       }
@@ -1370,26 +1320,6 @@
         }
       }
     },
-    "No announcements yet.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó áññóúñçéméñts ýét.⟧"
-          }
-        }
-      }
-    },
-    "No comments yet.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó çómméñts ýét.⟧"
-          }
-        }
-      }
-    },
     "No communities yet": {
       "localizations": {
         "fr": {
@@ -1710,36 +1640,6 @@
         }
       }
     },
-    "Post submitted": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Póst súbmíttéd⟧"
-          }
-        }
-      }
-    },
-    "Posts waiting for approval": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Pósts wáítíñg fór áppróvál⟧"
-          }
-        }
-      }
-    },
-    "Publish": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Públísh⟧"
-          }
-        }
-      }
-    },
     "Queued": {
       "localizations": {
         "fr": {
@@ -1960,16 +1860,6 @@
         }
       }
     },
-    "Saved on this phone. It will be sent for Elder approval when you're back in coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sávéd óñ thís phóñé. Ít wíll bé séñt fór Éldér áppróvál whéñ ýóú'ré báçk íñ çóvérágé.⟧"
-          }
-        }
-      }
-    },
     "Saved on this phone. Will send when you're back in coverage.": {
       "localizations": {
         "fr": {
@@ -2186,16 +2076,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "⟦Stóp sháríñg wíth %@?⟧"
-          }
-        }
-      }
-    },
-    "Submit": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Súbmít⟧"
           }
         }
       }
@@ -2426,26 +2306,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "⟦Víéw póst⟧"
-          }
-        }
-      }
-    },
-    "Waiting for Elder approval": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáítíñg fór Éldér áppróvál⟧"
-          }
-        }
-      }
-    },
-    "Waiting for Elder approval. It will appear once an Elder approves it.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáítíñg fór Éldér áppróvál. Ít wíll áppéár óñçé áñ Éldér áppróvés ít.⟧"
           }
         }
       }
@@ -2690,16 +2550,6 @@
         }
       }
     },
-    "Your post is live.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr póst ís lívé.⟧"
-          }
-        }
-      }
-    },
     "Your saved information is deleted from this phone. Your account and communities stay as they are.": {
       "localizations": {
         "fr": {
@@ -2766,6 +2616,176 @@
           "stringUnit": {
             "state": "translated",
             "value": "⟦↓ %@⟧"
+          }
+        }
+      }
+    },
+    "%lld+ only": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦%lld+ óñlý⟧"
+          }
+        }
+      }
+    },
+    "^[%lld comment](inflect: true)": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦^[%lld çómméñt](inflect: true)⟧"
+          }
+        }
+      }
+    },
+    "^[%lld reaction](inflect: true)": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦^[%lld réáçtíóñ](inflect: true)⟧"
+          }
+        }
+      }
+    },
+    "Be the first to share something with the community.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Bé thé fírst tó sháré sóméthíñg wíth thé çómmúñítý.⟧"
+          }
+        }
+      }
+    },
+    "Couldn't update the post": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Çóúldñ't úpdáté thé póst⟧"
+          }
+        }
+      }
+    },
+    "Create post": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Çréáté póst⟧"
+          }
+        }
+      }
+    },
+    "It disappears for everyone in the group, including on phones that are offline once they sync.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Ít dísáppéárs fór évérýóñé íñ thé gróúp, íñçlúdíñg óñ phóñés thát áré ófflíñé óñçé théý sýñç.⟧"
+          }
+        }
+      }
+    },
+    "No comments yet. Start the conversation.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Ñó çómméñts ýét. Stárt thé çóñvérsátíóñ.⟧"
+          }
+        }
+      }
+    },
+    "No posts yet": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Ñó pósts ýét⟧"
+          }
+        }
+      }
+    },
+    "Pin to top": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Píñ tó tóp⟧"
+          }
+        }
+      }
+    },
+    "Remove post": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Rémóvé póst⟧"
+          }
+        }
+      }
+    },
+    "Remove this post?": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Rémóvé thís póst?⟧"
+          }
+        }
+      }
+    },
+    "Touch and hold for more reactions": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Tóúçh áñd hóld fór móré réáçtíóñs⟧"
+          }
+        }
+      }
+    },
+    "Unpin": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Úñpíñ⟧"
+          }
+        }
+      }
+    },
+    "What's on your mind?": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Whát's óñ ýóúr míñd?⟧"
+          }
+        }
+      }
+    },
+    "Write a comment…": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Wríté á çómméñt…⟧"
+          }
+        }
+      }
+    },
+    "Your post goes up straight away. Elders can remove posts that aren't right for the community.": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Ýóúr póst góés úp stráíght áwáý. Éldérs çáñ rémóvé pósts thát áréñ't ríght fór thé çómmúñítý.⟧"
           }
         }
       }
