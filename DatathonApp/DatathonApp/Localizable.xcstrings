@@ -2090,12 +2090,12 @@
         }
       }
     },
-    "The demo language shows how MyMob can be translated into community languages with community permission.": {
+    "Community languages are written and approved by each community's Elders and language custodians. Anything not yet translated shows in English.": {
       "localizations": {
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "⟦Thé démó láñgúágé shóws hów MýMób çáñ bé tráñslátéd íñtó çómmúñítý láñgúágés wíth çómmúñítý pérmíssíóñ.⟧"
+            "value": "⟦Cómmúñítý láñgúágés áré wríttéñ áñd áppróvéd bý éáçh çómmúñítý's Éldérs áñd láñgúágé çústódíáñs. Áñýthíñg ñót ýét tráñslátéd shóws íñ Éñglísh.⟧"
           }
         }
       }

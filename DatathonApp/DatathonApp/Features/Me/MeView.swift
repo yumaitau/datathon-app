@@ -56,6 +56,7 @@ struct MeView: View {
 struct SettingsView: View {
     @Environment(AppEnvironment.self) private var env
     @Environment(AppSettings.self) private var settings
+    @Environment(CommunityLanguages.self) private var languages
     @Environment(NetworkMonitor.self) private var network
     @Environment(SyncEngine.self) private var sync
 
@@ -63,12 +64,25 @@ struct SettingsView: View {
         @Bindable var settings = settings
         Form {
             Section {
-                Picker("Language", selection: $settings.language) {
+                Picker("Language", selection: Binding(
+                    get: { languages.pending ?? settings.language },
+                    set: { code in
+                        Task {
+                            await languages.choose(code, settings: settings, api: env.api,
+                                                   canDownload: network.isOnline && !network.isSatelliteMode)
+                        }
+                    }
+                )) {
                     Text(verbatim: "English").tag("en")
+                    ForEach(languages.available) { language in
+                        // Language names are shown as their communities write them.
+                        Text(verbatim: language.status == "draft" ? "\(language.displayName) (draft)" : language.displayName)
+                            .tag(language.code)
+                    }
                     Text("Demo language (placeholder)").tag("demo")
                 }
             } footer: {
-                Text("The demo language shows how MyMob can be translated into community languages with community permission.")
+                Text("Community languages are written and approved by each community's Elders and language custodians. Anything not yet translated shows in English.")
             }
 
             Section {
@@ -113,6 +127,11 @@ struct SettingsView: View {
             }
         }
         .localizedNavigationTitle("Settings")
+        .task {
+            // Pick up newly published community languages; skipped over satellite.
+            guard network.isOnline, !network.isSatelliteMode else { return }
+            await languages.refresh(api: env.api, active: settings.language)
+        }
         .onChange(of: settings.simulateOffline) { _, offline in
             if !offline { Task { await env.refresh() } }
         }

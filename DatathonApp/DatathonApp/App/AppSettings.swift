@@ -7,7 +7,8 @@ final class AppSettings {
     @ObservationIgnored private let defaults: UserDefaults
 
     var baseURL: String { didSet { defaults.set(baseURL, forKey: "baseURL") } }
-    /// "en" or "demo". The demo language is a placeholder pseudo-translation, not a real community language.
+    /// "en", "demo" (the built-in placeholder pseudo-translation) or a community language code
+    /// from the server, e.g. an ISO 639-3 code. Community strings arrive as downloaded packs.
     var language: String { didSet { defaults.set(language, forKey: "language") } }
     var forceSatellite: Bool { didSet { defaults.set(forceSatellite, forKey: "forceSatellite") } }
     var simulateOffline: Bool { didSet { defaults.set(simulateOffline, forKey: "simulateOffline") } }
@@ -27,6 +28,12 @@ final class AppSettings {
     }
 
     var locale: Locale {
-        language == "demo" ? Locale(identifier: Self.demoLocaleIdentifier) : Locale(identifier: "en_AU")
+        switch language {
+        case "en": Locale(identifier: "en_AU")
+        case "demo": Locale(identifier: Self.demoLocaleIdentifier)
+        // The catalog has no localization for community languages, so lookups fall back
+        // to English and the downloaded pack overrides them.
+        default: Locale(identifier: language)
+        }
     }
 }

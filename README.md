@@ -52,7 +52,19 @@ xcodebuild -project DatathonApp/DatathonApp.xcodeproj -scheme DatathonApp \
   session leaves it off. No images, no extra fetches, no polling.
 - Multi-profile: each person has a bearer token and a salted PIN hash in the Keychain; the app locks
   to the profile switcher on launch and whenever it goes to the background.
-- Localisation: `Localizable.xcstrings` holds English plus a pseudo-translated placeholder
-  ("Demo language", stored under the `fr` locale) toggled in Settings. It stands in for a community
-  language and is not a translation of any real language.
+- Community languages: Settings → Language lists English plus every language communities have
+  published on the server (and drafts for the people writing them). Choosing one downloads its
+  approved strings (`GET /api/i18n/:code?platform=ios`) before switching, caches them on disk so
+  they work offline and in satellite mode (never downloaded over satellite), and overlays them on
+  the built-in English, so untranslated strings stay English. Translations are written and approved
+  by each community at the server's `/languages` editor (see the server README).
+  `App/CommunityLanguages.swift` routes `Bundle.main` lookups (including SwiftUI's) to the downloaded
+  strings; app code that formats strings itself uses `localizedString(_:locale:)`.
+  SHORTCUT: some of those lookups are private Foundation methods; fine for the datathon, but swap
+  for a reviewed approach before App Store submission.
+- After adding or changing user-facing text, add it to `Localizable.xcstrings` (Xcode does this on
+  build) and run `node scripts/sync-ios-strings.mjs` in the server repo so communities can translate it.
+- `Localizable.xcstrings` also keeps a built-in pseudo-translated placeholder ("Demo language
+  (placeholder)", stored under the `fr` locale) that works without a server. Neither demo language
+  is a real language.
 - Neutral visual design; no Aboriginal or Torres Strait Islander art or symbols.

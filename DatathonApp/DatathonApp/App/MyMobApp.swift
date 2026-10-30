@@ -16,6 +16,7 @@ struct MyMobApp: App {
                 .environment(env.sync)
                 .environment(env.router)
                 .environment(env.log)
+                .environment(env.languages)
                 .modelContainer(env.container)
         }
     }

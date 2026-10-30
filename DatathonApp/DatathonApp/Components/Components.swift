@@ -178,14 +178,16 @@ func normalizePhone(_ raw: String) -> String {
 
 /// Resolves a catalog string for an explicit locale. UIKit-rendered chrome (navigation titles,
 /// tab bar labels) ignores SwiftUI's `\.locale`, so the in-app language toggle resolves them here.
-func localizedString(_ key: String.LocalizationValue, locale: Locale) -> String {
-    var resource = LocalizedStringResource(key)
+/// A downloaded community translation wins; otherwise the String Catalog (English fallback).
+func localizedString(_ key: String, locale: Locale) -> String {
+    if let translated = StringOverrides.shared.value(for: key) { return translated }
+    var resource = LocalizedStringResource(String.LocalizationValue(key))
     resource.locale = locale
     return String(localized: resource)
 }
 
 private struct LocalizedNavigationTitle: ViewModifier {
-    let key: String.LocalizationValue
+    let key: String
     @Environment(\.locale) private var locale
 
     func body(content: Content) -> some View {
@@ -194,7 +196,7 @@ private struct LocalizedNavigationTitle: ViewModifier {
 }
 
 extension View {
-    func localizedNavigationTitle(_ key: String.LocalizationValue) -> some View {
+    func localizedNavigationTitle(_ key: String) -> some View {
         modifier(LocalizedNavigationTitle(key: key))
     }
 }

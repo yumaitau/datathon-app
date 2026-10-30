@@ -28,6 +28,7 @@ final class AppEnvironment {
     let sync: SyncEngine
     let router = Router()
     let push: PushManager
+    let languages = CommunityLanguages()
 
     init() {
         if ProcessInfo.processInfo.arguments.contains("-uiTestReset") {
@@ -58,6 +59,8 @@ final class AppEnvironment {
         self.api = api
         self.sync = sync
         push = PushManager(api: api, router: router)
+        CommunityBundle.install()
+        languages.activate(settings.language)
     }
 
     private static func makeContainer() -> ModelContainer {
@@ -72,11 +75,13 @@ final class AppEnvironment {
 
     var cache: CacheStore { CacheStore(context: container.mainContext) }
 
-    /// Refresh `Me` and run a sync. Skips the extra `/api/me` call in satellite mode.
+    /// Refresh `Me` and run a sync. Skips the extra `/api/me` call and language
+    /// downloads in satellite mode.
     func refresh() async {
         guard profiles.isUnlocked else { return }
         if network.isOnline && !network.isSatelliteMode {
             if let me: Me = try? await api.get("/api/me") { profiles.setMe(me) }
+            await languages.refresh(api: api, active: settings.language)
         }
         await sync.flush()
         if let m = sync.membershipsFromSync { profiles.updateMemberships(m) }
