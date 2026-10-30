@@ -44,7 +44,7 @@ struct PostDetailView: View {
                     } else {
                         Text(post.body).font(.body)
                         // Sorry business notices never show images.
-                        if post.hasMedia == true && !post.isSorryBusiness { MediaPlaceholder() }
+                        if (post.hasMedia == true || post.imageUrl != nil) && !post.isSorryBusiness { PostMedia(imageUrl: post.imageUrl) }
                     }
                     if post.isPending {
                         Label("Waiting for Elder approval", systemImage: "hourglass").foregroundStyle(.orange)
@@ -73,7 +73,7 @@ struct PostDetailView: View {
 
             if let error { Section { ErrorBanner(message: error) } }
         }
-        .navigationTitle(post.isSorryBusiness ? LocalizedStringKey("Sorry business") : LocalizedStringKey("Post"))
+        .localizedNavigationTitle(post.isSorryBusiness ? "Sorry business" : "Post")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

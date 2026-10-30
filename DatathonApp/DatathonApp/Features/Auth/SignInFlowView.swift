@@ -24,6 +24,7 @@ struct SignInFlowView: View {
     @State private var busy = false
     @State private var error: String?
     @State private var auth: AuthResponse?
+    @FocusState private var codeFocused: Bool
 
     private struct DemoAccount: Identifiable {
         let phone: String
@@ -48,7 +49,7 @@ struct SignInFlowView: View {
             case .confirmPin: pinStep(title: "Enter the PIN again", binding: $pin)
             }
         }
-        .navigationTitle(isReauth ? "Sign in again" : "Add a person")
+        .localizedNavigationTitle(isReauth ? "Sign in again" : "Add a person")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
@@ -114,6 +115,8 @@ struct SignInFlowView: View {
                 .keyboardType(.numberPad)
                 .textContentType(.oneTimeCode)
                 .font(.title2.monospacedDigit())
+                .focused($codeFocused)
+                .onAppear { codeFocused = true }
         } header: {
             Text("Enter the code sent to \(normalizePhone(phone))")
         } footer: {

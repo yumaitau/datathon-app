@@ -21,6 +21,7 @@ final class SyncEngine {
     /// Bumped when memberships arrive from a full sync so the profile store can refresh `Me`.
     private(set) var membershipsFromSync: [Membership]?
 
+    @ObservationIgnored private var flushRequested = false
     @ObservationIgnored let context: ModelContext
     @ObservationIgnored let transport: SyncTransport
     @ObservationIgnored let defaults: UserDefaults
@@ -79,16 +80,23 @@ final class SyncEngine {
     // MARK: Flush
 
     func flush() async {
-        guard !isSyncing, let pid = profileId(), isOnline() else { return }
+        guard !isSyncing else {
+            // A sync is in flight (e.g. user tapped "Sync now", or satellite mode switched on);
+            // run one more pass when it finishes rather than dropping the request.
+            flushRequested = true
+            return
+        }
+        guard let pid = profileId(), isOnline() else { return }
         isSyncing = true
         defer { isSyncing = false }
 
         // Writes queued while a request is in flight go out in a follow-up batch.
         for _ in 0..<3 {
+            flushRequested = false
             let batch = queued(profileId: pid)
             let ok = await sendBatch(batch, profileId: pid)
             guard ok, profileId() == pid else { break }
-            if queued(profileId: pid).isEmpty { break }
+            if queued(profileId: pid).isEmpty && !flushRequested { break }
         }
     }
 
@@ -203,7 +211,7 @@ final class SyncEngine {
         case let .createPost(groupId, body, title, kind):
             let author = currentUser() ?? PersonRef(id: "me", name: String(localized: "You"))
             let post = Post(id: "local-\(clientMutationId)", groupId: groupId, groupName: nil, author: author,
-                            kind: kind ?? "announcement", title: title, body: body, hasMedia: false,
+                            kind: kind ?? "announcement", title: title, body: body, hasMedia: false, imageUrl: nil,
                             status: "pending", pinned: false, urgent: false, restrictGender: nil, minAge: nil,
                             deceasedWarning: false, commentsEnabled: true, threadLocked: false, commentCount: 0,
                             reactions: .zero, myReactions: [], createdAt: .now, updatedAt: .now)

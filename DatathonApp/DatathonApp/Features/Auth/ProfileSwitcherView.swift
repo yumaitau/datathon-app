@@ -18,7 +18,7 @@ struct ProfileSwitcherView: View {
                             .foregroundStyle(.secondary)
                     }
                     .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                    .listRowInsets(EdgeInsets(top: 8, leading: 4, bottom: 8, trailing: 4))
                 }
 
                 if !profiles.profiles.isEmpty {
@@ -50,7 +50,7 @@ struct ProfileSwitcherView: View {
                     }
                 }
             }
-            .navigationTitle("MyMob")
+            .localizedNavigationTitle("MyMob")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(item: $pinFor) { profile in
                 PINEntrySheet(profile: profile)

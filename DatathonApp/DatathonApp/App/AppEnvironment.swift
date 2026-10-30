@@ -30,6 +30,11 @@ final class AppEnvironment {
     let push: PushManager
 
     init() {
+        if ProcessInfo.processInfo.arguments.contains("-uiTestReset") {
+            // UI tests start from an empty device: no profiles, default settings.
+            let d = UserDefaults.standard
+            for key in d.dictionaryRepresentation().keys { d.removeObject(forKey: key) }
+        }
         container = Self.makeContainer()
         let settings = AppSettings()
         let profiles = ProfileStore()

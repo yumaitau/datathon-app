@@ -59,6 +59,10 @@ struct RootView: View {
         .onChange(of: network.isOnline) { _, online in
             if online { Task { await env.refresh() } }
         }
+        .onChange(of: network.isSatelliteMode) { _, _ in
+            // One foreground sync on entering or leaving satellite mode; no polling.
+            Task { await env.refresh() }
+        }
         .onChange(of: profiles.unlockCount) { _, _ in
             guard profiles.isUnlocked else { return }
             Task {
@@ -71,18 +75,23 @@ struct RootView: View {
 
 struct MainTabView: View {
     @Environment(Router.self) private var router
+    @Environment(ProfileStore.self) private var profiles
+    @Environment(\.locale) private var locale
 
     var body: some View {
         @Bindable var router = router
         TabView(selection: $router.tab) {
-            Tab("Community", systemImage: "person.3", value: AppTab.community) {
+            Tab(localizedString("Community", locale: locale), systemImage: "person.3", value: AppTab.community) {
                 NavigationStack { GroupsView() }
+                    .connectivityBanner(profileId: profiles.activeProfileId)
             }
-            Tab("Calendar", systemImage: "calendar", value: AppTab.calendar) {
+            Tab(localizedString("Calendar", locale: locale), systemImage: "calendar", value: AppTab.calendar) {
                 NavigationStack { AppointmentsView() }
+                    .connectivityBanner(profileId: profiles.activeProfileId)
             }
-            Tab("Me", systemImage: "person.crop.circle", value: AppTab.me) {
+            Tab(localizedString("Me", locale: locale), systemImage: "person.crop.circle", value: AppTab.me) {
                 NavigationStack { MeView() }
+                    .connectivityBanner(profileId: profiles.activeProfileId)
             }
         }
     }

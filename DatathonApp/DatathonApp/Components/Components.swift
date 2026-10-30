@@ -24,7 +24,7 @@ struct ConnectivityBanner: View {
                 }
             }
         } else if !network.isOnline {
-            banner(icon: "wifi.slash", tint: .orange) {
+            banner(icon: "wifi.slash", tint: .orange.mix(with: .black, by: 0.4)) {
                 Text("You're offline").font(.subheadline.weight(.semibold))
                 Group {
                     if queued.isEmpty {
@@ -36,7 +36,7 @@ struct ConnectivityBanner: View {
                 .font(.caption)
             }
         } else if sync.isSyncing && !queued.isEmpty {
-            banner(icon: "arrow.triangle.2.circlepath", tint: .teal) {
+            banner(icon: "arrow.triangle.2.circlepath", tint: .teal.mix(with: .black, by: 0.4)) {
                 Text("Syncing \(queued.count) changes…").font(.subheadline.weight(.semibold))
             }
         }
@@ -51,16 +51,18 @@ struct ConnectivityBanner: View {
         .foregroundStyle(.white)
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
-        .background(tint.gradient)
+        .background(tint.gradient.opacity(0.95), ignoresSafeAreaEdges: .top)
         .accessibilityElement(children: .combine)
     }
 }
 
 extension View {
-    /// Adds the connectivity banner above the content of a tab root.
+    /// Stacks the connectivity banner above a tab's navigation stack so it never covers the
+    /// navigation bar and stays visible on pushed screens.
     func connectivityBanner(profileId: String?) -> some View {
-        safeAreaInset(edge: .top, spacing: 0) {
+        VStack(spacing: 0) {
             if let profileId { ConnectivityBanner(profileId: profileId) }
+            self
         }
     }
 }
@@ -85,7 +87,35 @@ struct Badge: View {
     }
 }
 
-/// Stand-in for post media (the API exposes `hasMedia` only). Satellite mode never loads media.
+/// Post image, loaded on the standard (non-satellite) session. Satellite mode never loads media.
+struct PostMedia: View {
+    let imageUrl: String?
+    @Environment(NetworkMonitor.self) private var network
+    @Environment(AppSettings.self) private var settings
+
+    var body: some View {
+        if !network.isSatelliteMode, let url = resolvedURL {
+            AsyncImage(url: url) { phase in
+                if let image = phase.image {
+                    image.resizable().scaledToFit().clipShape(RoundedRectangle(cornerRadius: 12))
+                } else {
+                    MediaPlaceholder()
+                }
+            }
+            .accessibilityLabel(Text("Photo"))
+        } else {
+            MediaPlaceholder()
+        }
+    }
+
+    private var resolvedURL: URL? {
+        guard let imageUrl, !imageUrl.isEmpty else { return nil }
+        if imageUrl.hasPrefix("http") { return URL(string: imageUrl) }
+        return URL(string: settings.baseURL.trimmingCharacters(in: CharacterSet(charactersIn: "/")) + imageUrl)
+    }
+}
+
+/// Neutral stand-in when no image is available or media is held back for coverage.
 struct MediaPlaceholder: View {
     @Environment(NetworkMonitor.self) private var network
 
@@ -144,4 +174,27 @@ func normalizePhone(_ raw: String) -> String {
     if digits.hasPrefix("61") { return "+" + digits }
     if digits.hasPrefix("0") { return "+61" + digits.dropFirst() }
     return digits.isEmpty ? "" : "+" + digits
+}
+
+/// Resolves a catalog string for an explicit locale. UIKit-rendered chrome (navigation titles,
+/// tab bar labels) ignores SwiftUI's `\.locale`, so the in-app language toggle resolves them here.
+func localizedString(_ key: String.LocalizationValue, locale: Locale) -> String {
+    var resource = LocalizedStringResource(key)
+    resource.locale = locale
+    return String(localized: resource)
+}
+
+private struct LocalizedNavigationTitle: ViewModifier {
+    let key: String.LocalizationValue
+    @Environment(\.locale) private var locale
+
+    func body(content: Content) -> some View {
+        content.navigationTitle(localizedString(key, locale: locale))
+    }
+}
+
+extension View {
+    func localizedNavigationTitle(_ key: String.LocalizationValue) -> some View {
+        modifier(LocalizedNavigationTitle(key: key))
+    }
 }

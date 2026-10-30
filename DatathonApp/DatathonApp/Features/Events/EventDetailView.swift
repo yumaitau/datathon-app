@@ -89,7 +89,7 @@ struct EventDetailView: View {
             CommentsSection(target: .event(event.id), groupId: event.groupId,
                             commentsEnabled: event.commentsEnabled, threadLocked: event.threadLocked)
         }
-        .navigationTitle("Event")
+        .localizedNavigationTitle("Event")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

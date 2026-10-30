@@ -37,8 +37,7 @@ struct MeView: View {
                 }
             }
         }
-        .navigationTitle("Me")
-        .connectivityBanner(profileId: profiles.activeProfileId)
+        .localizedNavigationTitle("Me")
         .confirmationDialog("Remove your profile from this phone?", isPresented: $confirmRemove, titleVisibility: .visible) {
             Button("Remove", role: .destructive) {
                 if let id = profiles.activeProfileId {
@@ -113,7 +112,7 @@ struct SettingsView: View {
                 Text("Satellite mode sends one small batched request to /api/sync/lite, loads no images and never polls.")
             }
         }
-        .navigationTitle("Settings")
+        .localizedNavigationTitle("Settings")
         .onChange(of: settings.simulateOffline) { _, offline in
             if !offline { Task { await env.refresh() } }
         }
@@ -173,7 +172,7 @@ struct NetworkLogView: View {
                 Text("Requests")
             }
         }
-        .navigationTitle("Network log")
+        .localizedNavigationTitle("Network log")
         .toolbar {
             ToolbarItem(placement: .primaryAction) { Button("Clear") { log.clear() } }
         }
@@ -215,7 +214,7 @@ struct SyncQueueView: View {
                 }
             }
         }
-        .navigationTitle("Waiting to send")
+        .localizedNavigationTitle("Waiting to send")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button("Send now") { Task { await sync.flush() } }

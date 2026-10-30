@@ -53,7 +53,7 @@ struct CarersView: View {
 
             if let error { Section { ErrorBanner(message: error) } }
         }
-        .navigationTitle("Carers")
+        .localizedNavigationTitle("Carers")
         .refreshable { await load() }
         .task { await load() }
         .sheet(isPresented: $adding) {
@@ -126,7 +126,7 @@ struct AddCarerView: View {
 
             if let error { Section { ErrorBanner(message: error) } }
         }
-        .navigationTitle("Add a carer")
+        .localizedNavigationTitle("Add a carer")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }

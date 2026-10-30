@@ -79,7 +79,7 @@ struct AppointmentsView: View {
                 }
             }
         }
-        .navigationTitle("Calendar")
+        .localizedNavigationTitle("Calendar")
         .navigationDestination(for: String.self) { id in AppointmentDetailView(appointmentId: id) }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -88,7 +88,6 @@ struct AppointmentsView: View {
         }
         .refreshable { await load() }
         .task { await load() }
-        .connectivityBanner(profileId: profiles.activeProfileId)
     }
 
     private func load() async {
@@ -243,7 +242,7 @@ struct AppointmentDetailView: View {
                     }
                 }
             }
-            .navigationTitle("Appointment")
+            .localizedNavigationTitle("Appointment")
             .navigationBarTitleDisplayMode(.inline)
         } else {
             ContentUnavailableView("Appointment not available", systemImage: "calendar.badge.exclamationmark")

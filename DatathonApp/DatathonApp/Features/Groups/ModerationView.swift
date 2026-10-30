@@ -34,7 +34,7 @@ struct ModerationView: View {
                 Section { ProgressView().frame(maxWidth: .infinity) }
             }
         }
-        .navigationTitle("Elder review")
+        .localizedNavigationTitle("Elder review")
         .navigationBarTitleDisplayMode(.inline)
         .refreshable { await load() }
         .task { await load() }

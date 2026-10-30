@@ -266,7 +266,7 @@ struct ComposerView: View {
 
             if let error { Section { ErrorBanner(message: error) } }
         }
-        .navigationTitle("New post")
+        .localizedNavigationTitle("New post")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }

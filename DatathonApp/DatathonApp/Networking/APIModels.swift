@@ -97,6 +97,8 @@ nonisolated struct Post: Codable, Hashable, Identifiable, Sendable {
     var title: String?
     var body: String
     var hasMedia: Bool?
+    /// Not in API.md; the dev server sends it alongside `hasMedia`.
+    var imageUrl: String?
     var status: String
     var pinned: Bool
     var urgent: Bool?

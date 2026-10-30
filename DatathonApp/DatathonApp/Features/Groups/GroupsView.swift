@@ -63,7 +63,7 @@ struct GroupsView: View {
                 }
             }
         }
-        .navigationTitle("Community")
+        .localizedNavigationTitle("Community")
         .navigationDestination(for: Membership.self) { m in GroupFeedView(membership: m) }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -72,7 +72,6 @@ struct GroupsView: View {
         }
         .refreshable { await env.refresh() }
         .sheet(isPresented: $joining) { NavigationStack { JoinGroupView() } }
-        .connectivityBanner(profileId: profiles.activeProfileId)
     }
 }
 
@@ -158,7 +157,7 @@ struct JoinGroupView: View {
 
             if let error { Section { ErrorBanner(message: error) } }
         }
-        .navigationTitle("Join a community")
+        .localizedNavigationTitle("Join a community")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Close") { dismiss() } } }
         .disabled(!network.isOnline)
