@@ -105,14 +105,14 @@ struct PostCard: View {
 
     @ViewBuilder
     private var summary: some View {
-        let total = counts.like + counts.heart + counts.thinkingOfYou
+        let total = counts.total
         let comments = post.commentsEnabled ? post.commentCount ?? 0 : 0
         if total > 0 || comments > 0 {
             HStack(spacing: 6) {
                 if total > 0 {
                     HStack(spacing: -4) {
                         ForEach(ReactionKind.allCases.filter { counts[$0] > 0 }, id: \.self) { kind in
-                            Image(systemName: kind.symbol(active: true))
+                            kind.icon(active: true)
                                 .font(.system(size: 10, weight: .bold))
                                 .foregroundStyle(.white)
                                 .frame(width: 20, height: 20)
@@ -154,19 +154,21 @@ struct PostCard: View {
     }
 
     /// One tap gives the post's main reaction (Like, or Thinking of you for sorry business);
-    /// touch and hold offers all three. Like most feeds, a person keeps one reaction per post.
+    /// touch and hold offers all reactions. A person keeps one reaction per post.
     private var reactButton: some View {
         let primary: ReactionKind = post.isSorryBusiness ? .thinkingOfYou : .like
         let current = ReactionKind.allCases.first { mine.contains($0.rawValue) }
         let shown = current ?? primary
         return Button { choose(current == nil ? primary : nil) } label: {
-            barLabel(shown.label, systemImage: shown.symbol(active: current != nil))
+            shown.reactionLabel(active: current != nil)
+                .font(.subheadline.weight(.semibold))
+                .frame(maxWidth: .infinity, minHeight: 44)
                 .foregroundStyle(current == nil ? Color.secondary : shown.tint)
         }
         .contextMenu {
             ForEach(ReactionKind.allCases, id: \.self) { kind in
                 Button { choose(current == kind ? nil : kind) } label: {
-                    Label(kind.label, systemImage: kind.symbol(active: current == kind))
+                    kind.reactionLabel(active: current == kind)
                 }
             }
         }
@@ -286,6 +288,8 @@ extension ReactionKind {
         case .like: .blue
         case .heart: .pink
         case .thinkingOfYou: .purple
+        case .deadly: .orange
+        case .aboriginalFlag: .primary
         }
     }
 }

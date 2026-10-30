@@ -188,7 +188,7 @@ struct CommentsSection: View {
         .listRowSeparator(.hidden)
     }
 
-    /// Tap to Like; touch and hold for Heart or Thinking of you. One reaction per person.
+    /// Tap to Like; touch and hold for all reactions. One reaction per person.
     private func likeButton(_ c: Comment) -> some View {
         let current = ReactionKind.allCases.first { mine(c).contains($0.rawValue) }
         return Button { Task { await choose(current == nil ? .like : nil, on: c) } } label: {
@@ -198,7 +198,7 @@ struct CommentsSection: View {
         .contextMenu {
             ForEach(ReactionKind.allCases, id: \.self) { kind in
                 Button { Task { await choose(current == kind ? nil : kind, on: c) } } label: {
-                    Label(kind.label, systemImage: kind.symbol(active: current == kind))
+                    kind.reactionLabel(active: current == kind)
                 }
             }
         }
@@ -212,11 +212,11 @@ struct CommentsSection: View {
 
     @ViewBuilder
     private func reactionSummary(_ counts: ReactionCounts) -> some View {
-        let total = counts.like + counts.heart + counts.thinkingOfYou
+        let total = counts.total
         if total > 0 {
             HStack(spacing: 2) {
                 ForEach(ReactionKind.allCases.filter { counts[$0] > 0 }, id: \.self) { kind in
-                    Image(systemName: kind.symbol(active: true)).foregroundStyle(kind.tint)
+                    kind.icon(active: true).foregroundStyle(kind.tint)
                 }
                 Text("\(total)").monospacedDigit()
             }

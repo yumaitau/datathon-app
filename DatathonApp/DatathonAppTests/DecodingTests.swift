@@ -4,6 +4,21 @@ import Testing
 
 @MainActor
 struct DecodingTests {
+    @Test func deadlyReactionRoundTripsAndOldCachesDefaultToZero() throws {
+        let old = Data(#"{"like":3,"heart":1,"thinking_of_you":4}"#.utf8)
+        var counts = try JSONDecoder().decode(ReactionCounts.self, from: old)
+        #expect(counts[.deadly] == 0)
+        #expect(counts[.aboriginalFlag] == 0)
+        counts[.deadly] = 2
+        counts[.aboriginalFlag] = 3
+        let decoded = try JSONDecoder().decode(ReactionCounts.self, from: JSONEncoder().encode(counts))
+        #expect(decoded[.deadly] == 2)
+        #expect(decoded[.aboriginalFlag] == 3)
+        #expect(decoded.total == 13)
+        #expect(ReactionKind(rawValue: "deadly") == .deadly)
+        #expect(ReactionKind(rawValue: "aboriginal_flag") == .aboriginalFlag)
+    }
+
     @Test func parsesISODatesWithAndWithoutFractionalSeconds() throws {
         let withMillis = try #require(APIDate.parse("2026-11-02T00:30:00.000Z"))
         let without = try #require(APIDate.parse("2026-11-02T00:30:00Z"))

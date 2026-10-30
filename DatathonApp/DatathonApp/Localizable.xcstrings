@@ -1,6 +1,26 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "Aboriginal flag": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Ábórígíñál flág⟧"
+          }
+        }
+      }
+    },
+    "Deadly": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Déádlý⟧"
+          }
+        }
+      }
+    },
     "Adults only (18+)": {
       "localizations": {
         "fr": {

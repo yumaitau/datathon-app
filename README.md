@@ -44,6 +44,11 @@ xcodebuild -project DatathonApp/DatathonApp.xcodeproj -scheme DatathonApp \
 
 ## Design notes
 
+- Post and comment reaction menus include Like, Heart, Thinking of you, Deadly
+  (flame), and an Aboriginal flag custom icon. Touch and hold the reaction button
+  to choose; VoiceOver exposes the same choices as actions. Deploy the server's
+  `20261031010000_add_reactions` migration and updated API before using the new reactions.
+
 - Offline-first: SwiftData caches feed, events, appointments, comments and carers per profile.
   Writes (`rsvp`, `confirmAppointment`, `createPost`, `createComment`, `reaction`) go into a
   `PendingMutation` queue with a fixed `clientMutationId` and flush through `POST /api/sync`.

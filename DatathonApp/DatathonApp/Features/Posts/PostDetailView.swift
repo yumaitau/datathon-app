@@ -68,6 +68,8 @@ extension ReactionKind {
         case .like: active ? "hand.thumbsup.fill" : "hand.thumbsup"
         case .heart: active ? "heart.fill" : "heart"
         case .thinkingOfYou: active ? "hands.and.sparkles.fill" : "hands.and.sparkles"
+        case .deadly: active ? "flame.fill" : "flame"
+        case .aboriginalFlag: "flag.fill"
         }
     }
 
@@ -76,6 +78,31 @@ extension ReactionKind {
         case .like: "Like"
         case .heart: "Heart"
         case .thinkingOfYou: "Thinking of you"
+        case .deadly: "Deadly"
+        case .aboriginalFlag: "Aboriginal flag"
         }
+    }
+
+    @ViewBuilder
+    func icon(active: Bool) -> some View {
+        if self == .aboriginalFlag {
+            // Australian Aboriginal flag: equal black/red halves, central yellow disc.
+            ZStack {
+                VStack(spacing: 0) {
+                    Color.black
+                    Color(red: 0.89, green: 0, blue: 0.17)
+                }
+                Circle().fill(Color(red: 1, green: 0.84, blue: 0))
+                    .frame(width: 7, height: 7)
+            }
+            .frame(width: 21, height: 14)
+            .accessibilityHidden(true)
+        } else {
+            Image(systemName: symbol(active: active))
+        }
+    }
+
+    func reactionLabel(active: Bool) -> some View {
+        Label { Text(label) } icon: { icon(active: active) }
     }
 }

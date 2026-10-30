@@ -48,13 +48,36 @@ nonisolated struct ReactionCounts: Codable, Hashable, Sendable {
     var like: Int
     var heart: Int
     var thinkingOfYou: Int
+    var deadly: Int = 0
+    var aboriginalFlag: Int = 0
 
     static let zero = ReactionCounts(like: 0, heart: 0, thinkingOfYou: 0)
 
     enum CodingKeys: String, CodingKey {
         case like, heart
         case thinkingOfYou = "thinking_of_you"
+        case deadly
+        case aboriginalFlag = "aboriginal_flag"
     }
+
+    init(like: Int, heart: Int, thinkingOfYou: Int, deadly: Int = 0, aboriginalFlag: Int = 0) {
+        self.like = like
+        self.heart = heart
+        self.thinkingOfYou = thinkingOfYou
+        self.deadly = deadly
+        self.aboriginalFlag = aboriginalFlag
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        like = try values.decode(Int.self, forKey: .like)
+        heart = try values.decode(Int.self, forKey: .heart)
+        thinkingOfYou = try values.decode(Int.self, forKey: .thinkingOfYou)
+        deadly = try values.decodeIfPresent(Int.self, forKey: .deadly) ?? 0
+        aboriginalFlag = try values.decodeIfPresent(Int.self, forKey: .aboriginalFlag) ?? 0
+    }
+
+    var total: Int { ReactionKind.allCases.reduce(0) { $0 + self[$1] } }
 
     subscript(kind: ReactionKind) -> Int {
         get {
@@ -62,6 +85,8 @@ nonisolated struct ReactionCounts: Codable, Hashable, Sendable {
             case .like: like
             case .heart: heart
             case .thinkingOfYou: thinkingOfYou
+            case .deadly: deadly
+            case .aboriginalFlag: aboriginalFlag
             }
         }
         set {
@@ -69,6 +94,8 @@ nonisolated struct ReactionCounts: Codable, Hashable, Sendable {
             case .like: like = newValue
             case .heart: heart = newValue
             case .thinkingOfYou: thinkingOfYou = newValue
+            case .deadly: deadly = newValue
+            case .aboriginalFlag: aboriginalFlag = newValue
             }
         }
     }
@@ -78,6 +105,8 @@ nonisolated enum ReactionKind: String, CaseIterable, Codable, Sendable {
     case like
     case heart
     case thinkingOfYou = "thinking_of_you"
+    case deadly
+    case aboriginalFlag = "aboriginal_flag"
 }
 
 nonisolated struct GroupSummary: Codable, Hashable, Identifiable, Sendable {
