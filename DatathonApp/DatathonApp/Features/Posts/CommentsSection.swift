@@ -191,22 +191,12 @@ struct CommentsSection: View {
     /// Tap to Like; touch and hold for all reactions. One reaction per person.
     private func likeButton(_ c: Comment) -> some View {
         let current = ReactionKind.allCases.first { mine(c).contains($0.rawValue) }
-        return Button { Task { await choose(current == nil ? .like : nil, on: c) } } label: {
+        return ReactionPickerButton(current: current, primary: .like, choose: { kind in
+            Task { await choose(kind, on: c) }
+        }) {
             Text(current?.label ?? "Like")
                 .foregroundStyle(current?.tint ?? Color.secondary)
-        }
-        .contextMenu {
-            ForEach(ReactionKind.allCases, id: \.self) { kind in
-                Button { Task { await choose(current == kind ? nil : kind, on: c) } } label: {
-                    kind.reactionLabel(active: current == kind)
-                }
-            }
-        }
-        .accessibilityAddTraits(current != nil ? .isSelected : [])
-        .accessibilityActions {
-            ForEach(ReactionKind.allCases, id: \.self) { kind in
-                Button(kind.label) { Task { await choose(current == kind ? nil : kind, on: c) } }
-            }
+                .frame(minHeight: 44)
         }
     }
 

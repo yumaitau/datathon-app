@@ -68,7 +68,7 @@ extension ReactionKind {
         case .like: active ? "hand.thumbsup.fill" : "hand.thumbsup"
         case .heart: active ? "heart.fill" : "heart"
         case .thinkingOfYou: active ? "hands.and.sparkles.fill" : "hands.and.sparkles"
-        case .deadly: active ? "flame.fill" : "flame"
+        case .deadly: "arrow.up.right"
         case .aboriginalFlag: "flag.fill"
         }
     }
@@ -97,6 +97,10 @@ extension ReactionKind {
             }
             .frame(width: 21, height: 14)
             .accessibilityHidden(true)
+        } else if self == .deadly {
+            SpearIcon().fill(.primary)
+                .frame(width: 22, height: 22)
+                .accessibilityHidden(true)
         } else {
             Image(systemName: symbol(active: active))
         }
@@ -104,5 +108,73 @@ extension ReactionKind {
 
     func reactionLabel(active: Bool) -> some View {
         Label { Text(label) } icon: { icon(active: active) }
+    }
+}
+
+/// A plain spear silhouette, without decorative cultural motifs.
+private struct SpearIcon: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let points: [CGPoint] = [
+            .init(x: 0.10, y: 0.90), .init(x: 0.66, y: 0.34),
+            .init(x: 0.57, y: 0.25), .init(x: 0.94, y: 0.06),
+            .init(x: 0.75, y: 0.43), .init(x: 0.66, y: 0.34),
+            .init(x: 0.16, y: 0.96),
+        ]
+        path.addLines(points.map { CGPoint(x: rect.minX + $0.x * rect.width, y: rect.minY + $0.y * rect.height) })
+        path.closeSubpath()
+        return path
+    }
+}
+
+/// Shared anchored reaction tray for posts and comments.
+struct ReactionPickerButton<Content: View>: View {
+    let current: ReactionKind?
+    let primary: ReactionKind
+    var choose: (ReactionKind?) -> Void
+    @ViewBuilder var content: () -> Content
+    @State private var showingPicker = false
+
+    var body: some View {
+        Button { choose(current == nil ? primary : nil) } label: { content() }
+            .highPriorityGesture(LongPressGesture(minimumDuration: 0.35).onEnded { _ in showingPicker = true })
+            .popover(isPresented: $showingPicker, arrowEdge: .bottom) {
+                ScrollView(.horizontal) {
+                    HStack(spacing: 4) {
+                        ForEach(ReactionKind.allCases, id: \.self) { kind in
+                            Button {
+                                choose(current == kind ? nil : kind)
+                                showingPicker = false
+                            } label: {
+                                kind.icon(active: true)
+                                    .font(.title2)
+                                    .foregroundStyle(kind.tint)
+                                    .frame(width: 48, height: 48)
+                                    .background(current == kind ? Color.accentColor.opacity(0.15) : .clear, in: Circle())
+                                    .overlay {
+                                        if current == kind { Circle().stroke(Color.accentColor, lineWidth: 2) }
+                                    }
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(Text(kind.label))
+                            .accessibilityIdentifier("reaction-option-\(kind.rawValue)")
+                            .accessibilityAddTraits(current == kind ? .isSelected : [])
+                            .help(Text(kind.label))
+                        }
+                    }
+                    .padding(12)
+                }
+                .scrollIndicators(.hidden)
+                .frame(width: 280, height: 72)
+                .presentationCompactAdaptation(.popover)
+            }
+            .accessibilityAddTraits(current != nil ? .isSelected : [])
+            .accessibilityHint(Text("Touch and hold for more reactions"))
+            .accessibilityAction(named: Text("Choose reaction")) { showingPicker = true }
+            .accessibilityActions {
+                ForEach(ReactionKind.allCases, id: \.self) { kind in
+                    Button(kind.label) { choose(current == kind ? nil : kind) }
+                }
+            }
     }
 }

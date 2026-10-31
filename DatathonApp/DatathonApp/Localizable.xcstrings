@@ -1,6 +1,16 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "Choose reaction": {
+      "localizations": {
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⟦Chóósé réáctíóñ⟧"
+          }
+        }
+      }
+    },
     "Aboriginal flag": {
       "localizations": {
         "fr": {

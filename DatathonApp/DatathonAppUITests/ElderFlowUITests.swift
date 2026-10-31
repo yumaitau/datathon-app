@@ -1,8 +1,8 @@
 import XCTest
 
 /// Drives the real app against the dev server as Aunty Grace (seeded Elder). Read-only on the
-/// server: it signs in, browses, opens the Elder queue, switches satellite mode and language,
-/// and re-locks, but never approves, rejects or posts.
+/// server in the governance test. The picker test temporarily adds and clears a reaction.
+/// Neither test approves, rejects or creates posts.
 final class ElderFlowUITests: XCTestCase {
     private var app: XCUIApplication!
 
@@ -28,6 +28,41 @@ final class ElderFlowUITests: XCTestCase {
         let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
         let allow = springboard.alerts.buttons["Allow"]
         if allow.waitForExistence(timeout: 3) { allow.tap() }
+    }
+
+    func testReactionPickerShowsAllChoices() throws {
+        XCTAssertTrue(app.buttons["Add a person"].waitForExistence(timeout: 10))
+        app.buttons["Add a person"].tap()
+        app.buttons.containing(NSPredicate(format: "label CONTAINS 'Aunty Grace'")).firstMatch.tap()
+        app.buttons["Send code"].tap()
+        let code = app.textFields["6-digit code"]
+        XCTAssertTrue(code.waitForExistence(timeout: 10))
+        code.tap()
+        app.typeText("123456")
+        app.buttons["Verify"].tap()
+        XCTAssertTrue(app.staticTexts["Choose a 4-digit PIN"].waitForExistence(timeout: 10))
+        enterPIN("2468")
+        XCTAssertTrue(app.staticTexts["Enter the PIN again"].waitForExistence(timeout: 5))
+        enterPIN("2468")
+        allowNotificationsIfAsked()
+        let group = app.buttons.containing(NSPredicate(format: "label CONTAINS 'Saltbush Creek'")).firstMatch
+        XCTAssertTrue(group.waitForExistence(timeout: 15))
+        group.tap()
+        let reaction = app.buttons["Like"].firstMatch
+        XCTAssertTrue(reaction.waitForExistence(timeout: 15))
+        reaction.press(forDuration: 0.6)
+        let deadly = app.buttons["reaction-option-deadly"]
+        XCTAssertTrue(deadly.waitForExistence(timeout: 5))
+        for kind in ["like", "heart", "thinking_of_you", "aboriginal_flag"] {
+            XCTAssertTrue(app.buttons["reaction-option-\(kind)"].exists)
+        }
+        snapshot("reaction-picker")
+        deadly.tap()
+        let selected = app.buttons["Deadly"].firstMatch
+        XCTAssertTrue(selected.waitForExistence(timeout: 5))
+        snapshot("deadly-selected")
+        selected.tap()
+        XCTAssertTrue(reaction.waitForExistence(timeout: 5))
     }
 
     func testElderSignInModerationSatelliteAndLanguage() throws {

@@ -159,25 +159,11 @@ struct PostCard: View {
         let primary: ReactionKind = post.isSorryBusiness ? .thinkingOfYou : .like
         let current = ReactionKind.allCases.first { mine.contains($0.rawValue) }
         let shown = current ?? primary
-        return Button { choose(current == nil ? primary : nil) } label: {
+        return ReactionPickerButton(current: current, primary: primary, choose: choose) {
             shown.reactionLabel(active: current != nil)
                 .font(.subheadline.weight(.semibold))
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .foregroundStyle(current == nil ? Color.secondary : shown.tint)
-        }
-        .contextMenu {
-            ForEach(ReactionKind.allCases, id: \.self) { kind in
-                Button { choose(current == kind ? nil : kind) } label: {
-                    kind.reactionLabel(active: current == kind)
-                }
-            }
-        }
-        .accessibilityAddTraits(current != nil ? .isSelected : [])
-        .accessibilityHint(Text("Touch and hold for more reactions"))
-        .accessibilityActions {
-            ForEach(ReactionKind.allCases, id: \.self) { kind in
-                Button(kind.label) { choose(current == kind ? nil : kind) }
-            }
         }
     }
 
