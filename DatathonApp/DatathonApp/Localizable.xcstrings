@@ -1,2825 +1,3056 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "Choose reaction": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Chóósé réáctíóñ⟧"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "· %lld members" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦· %lld mémbérs⟧"
           }
         }
       }
     },
-    "Aboriginal flag": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ábórígíñál flág⟧"
+    "“%@”" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦“%@”⟧"
           }
         }
       }
     },
-    "Deadly": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Déádlý⟧"
-          }
-        }
-      }
-    },
-    "Adults only (18+)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ádúlts óñlý (18+)⟧"
-          }
-        }
-      }
-    },
-    "Everyone": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Évérýóñé⟧"
-          }
-        }
-      }
-    },
-    "For women's and men's business, and content not suitable for young people.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Fór wóméñ's áñd méñ's búsíñéss, áñd çóñtéñt ñót súítáblé fór ýóúñg péóplé.⟧"
-          }
-        }
-      }
-    },
-    "Keep comment": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Kéép çómméñt⟧"
-          }
-        }
-      }
-    },
-    "Members": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Mémbérs⟧"
-          }
-        }
-      }
-    },
-    "Men only": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Méñ óñlý⟧"
-          }
-        }
-      }
-    },
-    "Who can see this": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Whó çáñ séé thís⟧"
-          }
-        }
-      }
-    },
-    "Women only": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wóméñ óñlý⟧"
-          }
-        }
-      }
-    },
-    "Language custodians draft translations of your community's languages. Elders approve them before anyone sees them.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Láñgúágé çústódíáñs dráft tráñslátíóñs óf ýóúr çómmúñítý's láñgúágés. Éldérs áppróvé thém béfóré áñýóñé séés thém.⟧"
-          }
-        }
-      }
-    },
-    "Make language custodian": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Máké láñgúágé çústódíáñ⟧"
-          }
-        }
-      }
-    },
-    "Managing members needs normal coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Máñágíñg mémbérs ñééds ñórmál çóvérágé.⟧"
-          }
-        }
-      }
-    },
-    "Remove this person from the group?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rémóvé thís pérsóñ fróm thé gróúp?⟧"
-          }
-        }
-      }
-    },
-    "Search members": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séárçh mémbérs⟧"
-          }
-        }
-      }
-    },
-    "Stop language custodian": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Stóp láñgúágé çústódíáñ⟧"
-          }
-        }
-      }
-    },
-    "They stop seeing %@. They can ask to join again.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Théý stóp sééíñg %@. Théý çáñ ásk tó jóíñ ágáíñ.⟧"
-          }
-        }
-      }
-    },
-    "%lld members": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld mémbérs⟧"
-          }
-        }
-      }
-    },
-    "Language custodian": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Láñgúágé çústódíáñ⟧"
-          }
-        }
-      }
-    },
-    "%@ would like to send you appointment details and reminders in MyMob.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%@ wóúld líké tó séñd ýóú áppóíñtméñt détáíls áñd rémíñdérs íñ MýMób.⟧"
-          }
-        }
-      }
-    },
-    "%@ · Reason: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$@ · Reason: %2$@"
+    "%@ · Reason: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · Reason: %2$@"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%@ · Réásóñ: %@⟧"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%@ · Réásóñ: %@⟧"
           }
         }
       }
     },
-    "%lld": {
-      "shouldTranslate": false
+    "%@ would like to send you appointment details and reminders in MyMob." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%@ wóúld líké tó séñd ýóú áppóíñtméñt détáíls áñd rémíñdérs íñ MýMób.⟧"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "shouldTranslate" : false
+    },
+    "%lld changes waiting to send" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld çháñgés wáítíñg tó séñd⟧"
+          }
+        }
+      }
+    },
+    "%lld changes will sync when you reconnect." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld çháñgés wíll sýñç whéñ ýóú réçóññéçt.⟧"
+          }
+        }
+      }
+    },
+    "%lld going" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld góíñg⟧"
+          }
+        }
+      }
+    },
+    "%lld maybe" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld máýbé⟧"
+          }
+        }
+      }
+    },
+    "%lld members" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld mémbérs⟧"
+          }
+        }
+      }
+    },
+    "%lld of 4 digits entered" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld óf 4 dígíts éñtéréd⟧"
+          }
+        }
+      }
+    },
+    "%lld updates waiting for coverage" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld úpdátés wáítíñg fór çóvérágé⟧"
+          }
+        }
+      }
+    },
+    "%lld+ only" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦%lld+ óñlý⟧"
+          }
+        }
+      }
+    },
+    "^[%lld comment](inflect: true)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦^[%lld çómméñt](inflect: true)⟧"
+          }
+        }
+      }
+    },
+    "^[%lld reaction](inflect: true)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦^[%lld réáçtíóñ](inflect: true)⟧"
+          }
+        }
+      }
+    },
+    "↑ %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦↑ %@⟧"
+          }
+        }
+      }
+    },
+    "↓ %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦↓ %@⟧"
+          }
+        }
+      }
+    },
+    "6-digit code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦6-dígít çódé⟧"
+          }
+        }
+      }
+    },
+    "0400 000 000" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦0400 000 000⟧"
+          }
+        }
+      }
+    },
+    "Aboriginal and Torres Strait Islander people are advised that this post may contain images, voices or names of people who have died." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ábórígíñál áñd Tórrés Stráít Ísláñdér péóplé áré ádvíséd thát thís póst máý çóñtáíñ ímágés, vóíçés ór ñámés óf péóplé whó hávé díéd.⟧"
+          }
+        }
+      }
+    },
+    "Aboriginal flag" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ábórígíñál flág⟧"
+          }
+        }
+      }
+    },
+    "Accept" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áççépt⟧"
+          }
+        }
+      }
+    },
+    "Add a carer" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ádd á çárér⟧"
+          }
+        }
+      }
+    },
+    "Add a person" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ádd á pérsóñ⟧"
+          }
+        }
+      }
+    },
+    "Adults only (18+)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ádúlts óñlý (18+)⟧"
+          }
+        }
+      }
+    },
+    "All caught up" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áll çáúght úp⟧"
+          }
+        }
+      }
+    },
+    "An Elder has locked this thread." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áñ Éldér hás lóçkéd thís thréád.⟧"
+          }
+        }
+      }
+    },
+    "An Elder of %@ will review your request." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áñ Éldér óf %@ wíll révíéw ýóúr réqúést.⟧"
+          }
+        }
+      }
+    },
+    "An Elder will review it. The author isn't told who reported it." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áñ Éldér wíll révíéw ít. Thé áúthór ísñ't tóld whó répórtéd ít.⟧"
+          }
+        }
+      }
+    },
+    "An Elder will review this comment." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áñ Éldér wíll révíéw thís çómméñt.⟧"
+          }
+        }
+      }
+    },
+    "An Elder will review your request. You'll see the community here once you're approved." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áñ Éldér wíll révíéw ýóúr réqúést. Ýóú'll séé thé çómmúñítý héré óñçé ýóú'ré áppróvéd.⟧"
+          }
+        }
+      }
+    },
+    "Announcement" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áññóúñçéméñt⟧"
+          }
+        }
+      }
+    },
+    "Appointment" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áppóíñtméñt⟧"
+          }
+        }
+      }
+    },
+    "Appointment confirmation" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áppóíñtméñt çóñfírmátíóñ⟧"
+          }
+        }
+      }
+    },
+    "Appointment not available" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áppóíñtméñt ñót áváíláblé⟧"
+          }
+        }
+      }
+    },
+    "Approve" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áppróvé⟧"
+          }
+        }
+      }
+    },
+    "Approving lets this service post events to the group. It never gives them the group feed or anyone's health information." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áppróvíñg léts thís sérvíçé póst évéñts tó thé gróúp. Ít ñévér gívés thém thé gróúp fééd ór áñýóñé's héálth íñfórmátíóñ.⟧"
+          }
+        }
+      }
+    },
+    "Are you going?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áré ýóú góíñg?⟧"
+          }
+        }
+      }
+    },
+    "Attended" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áttéñdéd⟧"
+          }
+        }
+      }
+    },
+    "Aunty" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áúñtý⟧"
+          }
+        }
+      }
+    },
+    "Aunty is a computer helper the Elders of %@ switched on. She's not a real Elder, and she won't share cultural knowledge or health advice. Your yarn is private — Elders can't read it." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áúñtý ís á çómpútér hélpér thé Éldérs óf %@ swítçhéd óñ. Shé's ñót á réál Éldér, áñd shé wóñ't sháré çúltúrál kñówlédgé ór héálth ádvíçé. Ýóúr ýárñ ís príváté — Éldérs çáñ't réád ít.⟧"
+          }
+        }
+      }
+    },
+    "Aunty needs coverage to yarn back. Try again when you're online." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áúñtý ñééds çóvérágé tó ýárñ báçk. Trý ágáíñ whéñ ýóú'ré óñlíñé.⟧"
+          }
+        }
+      }
+    },
+    "Aunty needs proper coverage. She's not available on satellite." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áúñtý ñééds própér çóvérágé. Shé's ñót áváíláblé óñ sátéllíté.⟧"
+          }
+        }
+      }
+    },
+    "Aunty said" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áúñtý sáíd⟧"
+          }
+        }
+      }
+    },
+    "Aunty's thinking…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Áúñtý's thíñkíñg…⟧"
+          }
+        }
+      }
     },
-    "%lld changes waiting to send": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld çháñgés wáítíñg tó séñd⟧"
+    "Be the first to share something with the community." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Bé thé fírst tó sháré sóméthíñg wíth thé çómmúñítý.⟧"
           }
         }
       }
     },
-    "%lld changes will sync when you reconnect.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld çháñgés wíll sýñç whéñ ýóú réçóññéçt.⟧"
+    "Before you go" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Béfóré ýóú gó⟧"
           }
         }
       }
     },
-    "%lld going": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld góíñg⟧"
+    "Booked" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Bóókéd⟧"
           }
         }
       }
     },
-    "%lld maybe": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld máýbé⟧"
+    "Calendar" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çáléñdár⟧"
           }
         }
       }
     },
-    "%lld of 4 digits entered": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld óf 4 dígíts éñtéréd⟧"
+    "Call %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çáll %@⟧"
           }
         }
       }
     },
-    "%lld updates waiting for coverage": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld úpdátés wáítíñg fór çóvérágé⟧"
+    "Can't go" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çáñ't gó⟧"
           }
         }
       }
     },
-    "0400 000 000": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦0400 000 000⟧"
+    "Cancel" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çáñçél⟧"
           }
         }
       }
     },
-    "6-digit code": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦6-dígít çódé⟧"
+    "Cancelled" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çáñçélléd⟧"
           }
         }
       }
     },
-    "Aboriginal and Torres Strait Islander people are advised that this post may contain images, voices or names of people who have died.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ábórígíñál áñd Tórrés Stráít Ísláñdér péóplé áré ádvíséd thát thís póst máý çóñtáíñ ímágés, vóíçés ór ñámés óf péóplé whó hávé díéd.⟧"
+    "Carer's mobile number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çárér's móbílé ñúmbér⟧"
           }
         }
       }
     },
-    "Accept": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áççépt⟧"
+    "Carers" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çárérs⟧"
           }
         }
       }
     },
-    "Add a carer": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ádd á çárér⟧"
+    "Carers see your appointment times, places and providers, and get reminders. They can't change your appointments." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çárérs séé ýóúr áppóíñtméñt tímés, pláçés áñd próvídérs, áñd gét rémíñdérs. Théý çáñ't çháñgé ýóúr áppóíñtméñts.⟧"
           }
         }
       }
     },
-    "Add a person": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ádd á pérsóñ⟧"
+    "Caring for" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çáríñg fór⟧"
           }
         }
       }
     },
-    "All caught up": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áll çáúght úp⟧"
+    "Choose a 4-digit PIN" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çhóósé á 4-dígít PÍÑ⟧"
           }
         }
       }
     },
-    "An Elder has locked this thread.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áñ Éldér hás lóçkéd thís thréád.⟧"
+    "Choose reaction" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Chóósé réáctíóñ⟧"
           }
         }
       }
     },
-    "An Elder of %@ will review your request.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áñ Éldér óf %@ wíll révíéw ýóúr réqúést.⟧"
+    "Clear" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çléár⟧"
           }
         }
       }
     },
-    "An Elder will review it. The author isn't told who reported it.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áñ Éldér wíll révíéw ít. Thé áúthór ísñ't tóld whó répórtéd ít.⟧"
+    "Clear it" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çléár ít⟧"
           }
         }
       }
     },
-    "An Elder will review this comment.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áñ Éldér wíll révíéw thís çómméñt.⟧"
+    "Clear this yarn" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çléár thís ýárñ⟧"
           }
         }
       }
     },
-    "An Elder will review your request. You'll see the community here once you're approved.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áñ Éldér wíll révíéw ýóúr réqúést. Ýóú'll séé thé çómmúñítý héré óñçé ýóú'ré áppróvéd.⟧"
+    "Clear this yarn?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çléár thís ýárñ?⟧"
           }
         }
       }
     },
-    "Announcement": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áññóúñçéméñt⟧"
+    "Clinic and service access" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çlíñíç áñd sérvíçé áççéss⟧"
           }
         }
       }
     },
-    "Appointment": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áppóíñtméñt⟧"
+    "Clinic invitations" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çlíñíç íñvítátíóñs⟧"
           }
         }
       }
     },
-    "Appointment confirmation": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áppóíñtméñt çóñfírmátíóñ⟧"
+    "Close" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çlósé⟧"
           }
         }
       }
     },
-    "Appointment not available": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áppóíñtméñt ñót áváíláblé⟧"
+    "Comment" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñt⟧"
           }
         }
       }
     },
-    "Approve": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áppróvé⟧"
+    "Comment actions" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñt áçtíóñs⟧"
           }
         }
       }
     },
-    "Approving lets this service post events to the group. It never gives them the group feed or anyone's health information.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áppróvíñg léts thís sérvíçé póst évéñts tó thé gróúp. Ít ñévér gívés thém thé gróúp fééd ór áñýóñé's héálth íñfórmátíóñ.⟧"
+    "Comment hidden by an Elder" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñt híddéñ bý áñ Éldér⟧"
           }
         }
       }
     },
-    "Are you going?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áré ýóú góíñg?⟧"
+    "Comments" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñts⟧"
           }
         }
       }
     },
-    "Attended": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Áttéñdéd⟧"
+    "Comments are turned off for this post." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñts áré túrñéd óff fór thís póst.⟧"
           }
         }
       }
     },
-    "Before you go": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Béfóré ýóú gó⟧"
+    "Comments on" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñts óñ⟧"
           }
         }
       }
     },
-    "Booked": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Bóókéd⟧"
+    "Comments will load when you have normal coverage." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómméñts wíll lóád whéñ ýóú hávé ñórmál çóvérágé.⟧"
           }
         }
       }
     },
-    "Calendar": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çáléñdár⟧"
+    "Community" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómmúñítý⟧"
           }
         }
       }
     },
-    "Call %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çáll %@⟧"
+    "Community languages are written and approved by each community's Elders and language custodians. Anything not yet translated shows in English." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Cómmúñítý láñgúágés áré wríttéñ áñd áppróvéd bý éáçh çómmúñítý's Éldérs áñd láñgúágé çústódíáñs. Áñýthíñg ñót ýét tráñslátéd shóws íñ Éñglísh.⟧"
           }
         }
       }
     },
-    "Can't go": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çáñ't gó⟧"
+    "Community name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çómmúñítý ñámé⟧"
           }
         }
       }
     },
-    "Cancel": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çáñçél⟧"
+    "Confirm I'll attend" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çóñfírm Í'll áttéñd⟧"
           }
         }
       }
     },
-    "Cancelled": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çáñçélléd⟧"
+    "Confirmed" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çóñfírméd⟧"
           }
         }
       }
     },
-    "Carer's mobile number": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çárér's móbílé ñúmbér⟧"
+    "Connection" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çóññéçtíóñ⟧"
           }
         }
       }
     },
-    "Carers": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çárérs⟧"
+    "Couldn't update the post" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çóúldñ't úpdáté thé póst⟧"
           }
         }
       }
     },
-    "Carers see your appointment times, places and providers, and get reminders. They can't change your appointments.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çárérs séé ýóúr áppóíñtméñt tímés, pláçés áñd próvídérs, áñd gét rémíñdérs. Théý çáñ't çháñgé ýóúr áppóíñtméñts.⟧"
+    "Create post" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çréáté póst⟧"
           }
         }
       }
     },
-    "Caring for": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çáríñg fór⟧"
+    "Cultural warning" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çúltúrál wárñíñg⟧"
           }
         }
       }
     },
-    "Choose a 4-digit PIN": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çhóósé á 4-dígít PÍÑ⟧"
+    "Cultural warning. Tap to view." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Çúltúrál wárñíñg. Táp tó víéw.⟧"
           }
         }
       }
     },
-    "Clear": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çléár⟧"
+    "Deadly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Déádlý⟧"
           }
         }
       }
     },
-    "Clinic and service access": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çlíñíç áñd sérvíçé áççéss⟧"
+    "Deceased-person warning" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Déçéáséd-pérsóñ wárñíñg⟧"
           }
         }
       }
     },
-    "Clinic invitations": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çlíñíç íñvítátíóñs⟧"
+    "Delete" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Délété⟧"
           }
         }
       }
     },
-    "Close": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çlósé⟧"
+    "Demo accounts" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Démó áççóúñts⟧"
           }
         }
       }
     },
-    "Comment": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñt⟧"
+    "Demo language (placeholder)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Démó láñgúágé (pláçéhóldér)⟧"
           }
         }
       }
     },
-    "Comment actions": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñt áçtíóñs⟧"
+    "Demo numbers accept 123456." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Démó ñúmbérs áççépt 123456.⟧"
           }
         }
       }
     },
-    "Comment hidden by an Elder": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñt híddéñ bý áñ Éldér⟧"
+    "Developer" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Dévélópér⟧"
           }
         }
       }
     },
-    "Comments": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñts⟧"
+    "Dismiss" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Dísmíss⟧"
           }
         }
       }
     },
-    "Comments are turned off for this post.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñts áré túrñéd óff fór thís póst.⟧"
+    "Each person on this phone has their own PIN. Health information is only shown to the person it belongs to and the carers they choose." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éáçh pérsóñ óñ thís phóñé hás théír ówñ PÍÑ. Héálth íñfórmátíóñ ís óñlý shówñ tó thé pérsóñ ít bélóñgs tó áñd thé çárérs théý çhóósé.⟧"
           }
         }
       }
     },
-    "Comments on": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñts óñ⟧"
+    "Elder" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldér⟧"
           }
         }
       }
     },
-    "Comments will load when you have normal coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómméñts wíll lóád whéñ ýóú hávé ñórmál çóvérágé.⟧"
+    "Elder controls" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldér çóñtróls⟧"
           }
         }
       }
     },
-    "Community": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómmúñítý⟧"
+    "Elder controls need normal coverage." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldér çóñtróls ñééd ñórmál çóvérágé.⟧"
           }
         }
       }
     },
-    "Community name": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çómmúñítý ñámé⟧"
+    "Elder options" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldér óptíóñs⟧"
           }
         }
       }
     },
-    "Confirm I'll attend": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çóñfírm Í'll áttéñd⟧"
+    "Elder review" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldér révíéw⟧"
           }
         }
       }
     },
-    "Confirmed": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çóñfírméd⟧"
+    "Elder review needs normal coverage." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldér révíéw ñééds ñórmál çóvérágé.⟧"
           }
         }
       }
     },
-    "Connection": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çóññéçtíóñ⟧"
+    "Elders share invite codes. An Elder still approves every new member." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éldérs sháré íñvíté çódés. Áñ Éldér stíll áppróvés évérý ñéw mémbér.⟧"
           }
         }
       }
     },
-    "Cultural warning": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çúltúrál wárñíñg⟧"
+    "Enter PIN for %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éñtér PÍÑ fór %@⟧"
           }
         }
       }
     },
-    "Cultural warning. Tap to view.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çúltúrál wárñíñg. Táp tó víéw.⟧"
+    "Enter PIN to open" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éñtér PÍÑ tó ópéñ⟧"
           }
         }
       }
     },
-    "Deceased-person warning": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Déçéáséd-pérsóñ wárñíñg⟧"
+    "Enter the code sent to %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éñtér thé çódé séñt tó %@⟧"
           }
         }
       }
     },
-    "Delete": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Délété⟧"
+    "Enter the PIN again" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Éñtér thé PÍÑ ágáíñ⟧"
           }
         }
       }
     },
-    "Demo accounts": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Démó áççóúñts⟧"
+    "Event" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Évéñt⟧"
           }
         }
       }
     },
-    "Demo language (placeholder)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Démó láñgúágé (pláçéhóldér)⟧"
+    "Event not available" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Évéñt ñót áváíláblé⟧"
           }
         }
       }
     },
-    "Demo numbers accept 123456.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Démó ñúmbérs áççépt 123456.⟧"
+    "Everyone" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Évérýóñé⟧"
           }
         }
       }
     },
-    "Developer": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Dévélópér⟧"
+    "Everything is sent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Évérýthíñg ís séñt⟧"
           }
         }
       }
     },
-    "Dismiss": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Dísmíss⟧"
+    "Everything you and Aunty said is deleted. This can't be undone." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Évérýthíñg ýóú áñd Áúñtý sáíd ís délétéd. Thís çáñ't bé úñdóñé.⟧"
           }
         }
       }
     },
-    "Each person on this phone has their own PIN. Health information is only shown to the person it belongs to and the carers they choose.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éáçh pérsóñ óñ thís phóñé hás théír ówñ PÍÑ. Héálth íñfórmátíóñ ís óñlý shówñ tó thé pérsóñ ít bélóñgs tó áñd thé çárérs théý çhóósé.⟧"
+    "For %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Fór %@⟧"
           }
         }
       }
     },
-    "Elder": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldér⟧"
+    "For women's and men's business, and content not suitable for young people." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Fór wóméñ's áñd méñ's búsíñéss, áñd çóñtéñt ñót súítáblé fór ýóúñg péóplé.⟧"
           }
         }
       }
     },
-    "Elder controls": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldér çóñtróls⟧"
+    "Force satellite mode" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Fórçé sátéllíté módé⟧"
           }
         }
       }
     },
-    "Elder controls need normal coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldér çóñtróls ñééd ñórmál çóvérágé.⟧"
+    "General" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Géñérál⟧"
           }
         }
       }
     },
-    "Elder options": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldér óptíóñs⟧"
+    "Going" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Góíñg⟧"
           }
         }
       }
     },
-    "Elder review": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldér révíéw⟧"
+    "Guardian has consented" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Gúárdíáñ hás çóñséñtéd⟧"
           }
         }
       }
     },
-    "Elder review needs normal coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldér révíéw ñééds ñórmál çóvérágé.⟧"
+    "Gzip %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Gzíp %@⟧"
           }
         }
       }
     },
-    "Elders share invite codes. An Elder still approves every new member.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éldérs sháré íñvíté çódés. Áñ Éldér stíll áppróvés évérý ñéw mémbér.⟧"
+    "Have an invite code?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Hávé áñ íñvíté çódé?⟧"
           }
         }
       }
     },
-    "Enter PIN for %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éñtér PÍÑ fór %@⟧"
+    "Heart" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Héárt⟧"
           }
         }
       }
     },
-    "Enter PIN to open": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éñtér PÍÑ tó ópéñ⟧"
+    "Hello bub. What's going on for you today?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Hélló búb. Whát's góíñg óñ fór ýóú tódáý?⟧"
           }
         }
       }
     },
-    "Enter the PIN again": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éñtér thé PÍÑ ágáíñ⟧"
+    "Hide comment" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Hídé çómméñt⟧"
           }
         }
       }
     },
-    "Enter the code sent to %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Éñtér thé çódé séñt tó %@⟧"
+    "I agree that this person can see my appointment times, places and providers, and receive reminders about them. I can stop sharing at any time." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Í ágréé thát thís pérsóñ çáñ séé mý áppóíñtméñt tímés, pláçés áñd próvídérs, áñd réçéívé rémíñdérs ábóút thém. Í çáñ stóp sháríñg át áñý tímé.⟧"
           }
         }
       }
     },
-    "Event": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Évéñt⟧"
+    "Interface" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Íñtérfáçé⟧"
           }
         }
       }
     },
-    "Event not available": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Évéñt ñót áváíláblé⟧"
+    "Invite code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Íñvíté çódé⟧"
           }
         }
       }
     },
-    "Everything is sent": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Évérýthíñg ís séñt⟧"
+    "It disappears for everyone in the group, including on phones that are offline once they sync." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ít dísáppéárs fór évérýóñé íñ thé gróúp, íñçlúdíñg óñ phóñés thát áré ófflíñé óñçé théý sýñç.⟧"
           }
         }
       }
     },
-    "For %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Fór %@⟧"
+    "Join a community" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Jóíñ á çómmúñítý⟧"
           }
         }
       }
     },
-    "Force satellite mode": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Fórçé sátéllíté módé⟧"
+    "Join requests" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Jóíñ réqúésts⟧"
           }
         }
       }
     },
-    "General": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Géñérál⟧"
+    "Join your community with an invite code from an Elder, or search by name." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Jóíñ ýóúr çómmúñítý wíth áñ íñvíté çódé fróm áñ Éldér, ór séárçh bý ñámé.⟧"
           }
         }
       }
     },
-    "Going": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Góíñg⟧"
+    "Joining needs a connection." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Jóíñíñg ñééds á çóññéçtíóñ.⟧"
           }
         }
       }
     },
-    "Guardian has consented": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Gúárdíáñ hás çóñséñtéd⟧"
+    "Keep comment" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Kéép çómméñt⟧"
           }
         }
       }
     },
-    "Gzip %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Gzíp %@⟧"
+    "Keep it" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Kéép ít⟧"
           }
         }
       }
     },
-    "Have an invite code?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Hávé áñ íñvíté çódé?⟧"
+    "Language" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Láñgúágé⟧"
           }
         }
       }
     },
-    "Heart": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Héárt⟧"
+    "Language custodian" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Láñgúágé çústódíáñ⟧"
           }
         }
       }
     },
-    "Hide comment": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Hídé çómméñt⟧"
+    "Language custodians draft translations of your community's languages. Elders approve them before anyone sees them." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Láñgúágé çústódíáñs dráft tráñslátíóñs óf ýóúr çómmúñítý's láñgúágés. Éldérs áppróvé thém béfóré áñýóñé séés thém.⟧"
           }
         }
       }
     },
-    "I agree that this person can see my appointment times, places and providers, and receive reminders about them. I can stop sharing at any time.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Í ágréé thát thís pérsóñ çáñ séé mý áppóíñtméñt tímés, pláçés áñd próvídérs, áñd réçéívé rémíñdérs ábóút thém. Í çáñ stóp sháríñg át áñý tímé.⟧"
+    "Last sync error" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Lást sýñç érrór⟧"
           }
         }
       }
     },
-    "Interface": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Íñtérfáçé⟧"
+    "Last synced %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Lást sýñçéd %@⟧"
           }
         }
       }
     },
-    "Invite code": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Íñvíté çódé⟧"
+    "Latest satellite sync" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Látést sátéllíté sýñç⟧"
           }
         }
       }
     },
-    "Join a community": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Jóíñ á çómmúñítý⟧"
+    "Like" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Líké⟧"
           }
         }
       }
     },
-    "Join requests": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Jóíñ réqúésts⟧"
+    "Link quality" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Líñk qúálítý⟧"
           }
         }
       }
     },
-    "Join your community with an invite code from an Elder, or search by name.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Jóíñ ýóúr çómmúñítý wíth áñ íñvíté çódé fróm áñ Éldér, ór séárçh bý ñámé.⟧"
+    "Lock thread" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Lóçk thréád⟧"
           }
         }
       }
     },
-    "Joining needs a connection.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Jóíñíñg ñééds á çóññéçtíóñ.⟧"
+    "Make language custodian" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Máké láñgúágé çústódíáñ⟧"
           }
         }
       }
     },
-    "Language": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Láñgúágé⟧"
+    "Managing members needs normal coverage." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Máñágíñg mémbérs ñééds ñórmál çóvérágé.⟧"
           }
         }
       }
     },
-    "Last sync error": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Lást sýñç érrór⟧"
+    "Maybe" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Máýbé⟧"
           }
         }
       }
     },
-    "Last synced %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Lást sýñçéd %@⟧"
+    "Me" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Mé⟧"
           }
         }
       }
     },
-    "Latest satellite sync": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Látést sátéllíté sýñç⟧"
+    "Media waiting for coverage" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Médíá wáítíñg fór çóvérágé⟧"
           }
         }
       }
     },
-    "Like": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Líké⟧"
+    "Members" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Mémbérs⟧"
           }
         }
       }
     },
-    "Link quality": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Líñk qúálítý⟧"
+    "Men only" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Méñ óñlý⟧"
           }
         }
       }
     },
-    "Lock thread": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Lóçk thréád⟧"
+    "Mine" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Míñé⟧"
           }
         }
       }
     },
-    "Maybe": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Máýbé⟧"
+    "Missed" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Mísséd⟧"
           }
         }
       }
     },
-    "Me": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Mé⟧"
+    "Mobile number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Móbílé ñúmbér⟧"
           }
         }
       }
     },
-    "Media waiting for coverage": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Médíá wáítíñg fór çóvérágé⟧"
+    "Mute sorry business notifications" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Múté sórrý búsíñéss ñótífíçátíóñs⟧"
           }
         }
       }
     },
-    "Mine": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Míñé⟧"
+    "MyMob" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦MýMób⟧"
           }
         }
       }
     },
-    "Missed": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Mísséd⟧"
+    "Network log" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñétwórk lóg⟧"
           }
         }
       }
     },
-    "Mobile number": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Móbílé ñúmbér⟧"
+    "New post" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñéw póst⟧"
           }
         }
       }
     },
-    "Mute sorry business notifications": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Múté sórrý búsíñéss ñótífíçátíóñs⟧"
+    "No" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó⟧"
           }
         }
       }
     },
-    "MyMob": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦MýMób⟧"
+    "No Aunty here yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó Áúñtý héré ýét⟧"
           }
         }
       }
     },
-    "Network log": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñétwórk lóg⟧"
+    "No comments yet. Start the conversation." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó çómméñts ýét. Stárt thé çóñvérsátíóñ.⟧"
           }
         }
       }
     },
-    "New post": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñéw póst⟧"
+    "No communities yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó çómmúñítíés ýét⟧"
           }
         }
       }
     },
-    "No": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó⟧"
+    "No one can see your appointments yet." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó óñé çáñ séé ýóúr áppóíñtméñts ýét.⟧"
           }
         }
       }
     },
-    "No communities yet": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó çómmúñítíés ýét⟧"
+    "No one has chosen you as their carer." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó óñé hás çhóséñ ýóú ás théír çárér.⟧"
           }
         }
       }
     },
-    "No one can see your appointments yet.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó óñé çáñ séé ýóúr áppóíñtméñts ýét.⟧"
+    "No one has shared upcoming appointments with you." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó óñé hás sháréd úpçómíñg áppóíñtméñts wíth ýóú.⟧"
           }
         }
       }
     },
-    "No one has chosen you as their carer.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó óñé hás çhóséñ ýóú ás théír çárér.⟧"
+    "No one with that number uses MyMob yet. Ask them to install it first." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó óñé wíth thát ñúmbér úsés MýMób ýét. Ásk thém tó íñstáll ít fírst.⟧"
           }
         }
       }
     },
-    "No one has shared upcoming appointments with you.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó óñé hás sháréd úpçómíñg áppóíñtméñts wíth ýóú.⟧"
+    "No posts yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó pósts ýét⟧"
           }
         }
       }
     },
-    "No one with that number uses MyMob yet. Ask them to install it first.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó óñé wíth thát ñúmbér úsés MýMób ýét. Ásk thém tó íñstáll ít fírst.⟧"
+    "No requests yet." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó réqúésts ýét.⟧"
           }
         }
       }
     },
-    "No requests yet.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó réqúésts ýét.⟧"
+    "No upcoming appointments." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñó úpçómíñg áppóíñtméñts.⟧"
           }
         }
       }
     },
-    "No upcoming appointments.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó úpçómíñg áppóíñtméñts.⟧"
+    "Not accepted" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñót áççéptéd⟧"
           }
         }
       }
     },
-    "Not accepted": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñót áççéptéd⟧"
+    "Not found." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñót fóúñd.⟧"
           }
         }
       }
     },
-    "Not found.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñót fóúñd.⟧"
+    "Not going" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñót góíñg⟧"
           }
         }
       }
     },
-    "Not going": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñót góíñg⟧"
+    "Nothing is waiting for your review." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñóthíñg ís wáítíñg fór ýóúr révíéw.⟧"
           }
         }
       }
     },
-    "Nothing is waiting for your review.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñóthíñg ís wáítíñg fór ýóúr révíéw.⟧"
+    "Notices" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñótíçés⟧"
           }
         }
       }
     },
-    "Notices": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñótíçés⟧"
+    "Notifications" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñótífíçátíóñs⟧"
           }
         }
       }
     },
-    "Notifications": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñótífíçátíóñs⟧"
+    "Notifications never show health details, because phones are often shared." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ñótífíçátíóñs ñévér shów héálth détáíls, béçáúsé phóñés áré óftéñ sháréd.⟧"
           }
         }
       }
     },
-    "Notifications never show health details, because phones are often shared.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñótífíçátíóñs ñévér shów héálth détáíls, béçáúsé phóñés áré óftéñ sháréd.⟧"
+    "Offline" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ófflíñé⟧"
           }
         }
       }
     },
-    "OK": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦ÓK⟧"
+    "OK" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦ÓK⟧"
           }
         }
       }
     },
-    "Offline": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ófflíñé⟧"
+    "Online" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Óñlíñé⟧"
           }
         }
       }
     },
-    "Online": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Óñlíñé⟧"
+    "Only you, and carers you choose, will see them." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Óñlý ýóú, áñd çárérs ýóú çhóósé, wíll séé thém.⟧"
           }
         }
       }
     },
-    "Only you, and carers you choose, will see them.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Óñlý ýóú, áñd çárérs ýóú çhóósé, wíll séé thém.⟧"
+    "Open in Maps" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ópéñ íñ Máps⟧"
           }
         }
       }
     },
-    "Open in Maps": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ópéñ íñ Máps⟧"
+    "Or search" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ór séárçh⟧"
           }
         }
       }
     },
-    "Or search": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ór séárçh⟧"
+    "Over the air (gzip)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Óvér thé áír (gzíp)⟧"
           }
         }
       }
     },
-    "Over the air (gzip)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Óvér thé áír (gzíp)⟧"
+    "Past" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Pást⟧"
           }
         }
       }
     },
-    "PINs didn't match. Choose your PIN again.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦PÍÑs dídñ't mátçh. Çhóósé ýóúr PÍÑ ágáíñ.⟧"
+    "Payload %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Páýlóád %@⟧"
           }
         }
       }
     },
-    "Past": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Pást⟧"
+    "Pending" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Péñdíñg⟧"
           }
         }
       }
     },
-    "Payload %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Páýlóád %@⟧"
+    "People I care for" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Péóplé Í çáré fór⟧"
           }
         }
       }
     },
-    "Pending": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Péñdíñg⟧"
+    "People on this phone" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Péóplé óñ thís phóñé⟧"
           }
         }
       }
     },
-    "People I care for": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Péóplé Í çáré fór⟧"
+    "People who can see my appointments" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Péóplé whó çáñ séé mý áppóíñtméñts⟧"
           }
         }
       }
     },
-    "People on this phone": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Péóplé óñ thís phóñé⟧"
+    "Photo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Phótó⟧"
           }
         }
       }
     },
-    "People who can see my appointments": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Péóplé whó çáñ séé mý áppóíñtméñts⟧"
+    "Pin to top" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Píñ tó tóp⟧"
           }
         }
       }
     },
-    "Photo": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Phótó⟧"
+    "Pinned" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Píññéd⟧"
           }
         }
       }
     },
-    "Pinned": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Píññéd⟧"
+    "PINs didn't match. Choose your PIN again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦PÍÑs dídñ't mátçh. Çhóósé ýóúr PÍÑ ágáíñ.⟧"
           }
         }
       }
     },
-    "Post": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Póst⟧"
+    "Please ring someone. 13YARN 13 92 76 · Lifeline 13 11 14 · Emergency 000." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Pléásé ríñg sóméóñé. 13ÝÁRÑ 13 92 76 · Lífélíñé 13 11 14 · Émérgéñçý 000.⟧"
           }
         }
       }
     },
-    "Post not available": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Póst ñót áváíláblé⟧"
+    "Post" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Póst⟧"
           }
         }
       }
     },
-    "Queued": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Qúéúéd⟧"
+    "Post not available" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Póst ñót áváíláblé⟧"
           }
         }
       }
     },
-    "RSVP": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦RSVP⟧"
+    "Queued" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Qúéúéd⟧"
           }
         }
       }
     },
-    "Reaction": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réáçtíóñ⟧"
+    "Reaction" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réáçtíóñ⟧"
           }
         }
       }
     },
-    "Received": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réçéívéd⟧"
+    "Received" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réçéívéd⟧"
           }
         }
       }
     },
-    "Reject": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réjéçt⟧"
+    "Reject" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réjéçt⟧"
           }
         }
       }
     },
-    "Remove": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rémóvé⟧"
+    "Remove" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rémóvé⟧"
           }
         }
       }
     },
-    "Remove me from this phone": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rémóvé mé fróm thís phóñé⟧"
+    "Remove me from this phone" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rémóvé mé fróm thís phóñé⟧"
           }
         }
       }
     },
-    "Remove your profile from this phone?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rémóvé ýóúr prófílé fróm thís phóñé?⟧"
+    "Remove post" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rémóvé póst⟧"
           }
         }
       }
     },
-    "Reply": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réplý⟧"
+    "Remove this person from the group?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rémóvé thís pérsóñ fróm thé gróúp?⟧"
           }
         }
       }
     },
-    "Replying to %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réplýíñg tó %@⟧"
+    "Remove this post?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rémóvé thís póst?⟧"
           }
         }
       }
     },
-    "Report": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Répórt⟧"
+    "Remove your profile from this phone?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rémóvé ýóúr prófílé fróm thís phóñé?⟧"
           }
         }
       }
     },
-    "Report this comment?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Répórt thís çómméñt?⟧"
+    "Reply" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réplý⟧"
           }
         }
       }
     },
-    "Reported comments": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Répórtéd çómméñts⟧"
+    "Replying to %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réplýíñg tó %@⟧"
           }
         }
       }
     },
-    "Request": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réqúést⟧"
+    "Report" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Répórt⟧"
           }
         }
       }
     },
-    "Request sent": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réqúést séñt⟧"
+    "Report this comment?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Répórt thís çómméñt?⟧"
           }
         }
       }
     },
-    "Request to join": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réqúést tó jóíñ⟧"
+    "Reported comments" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Répórtéd çómméñts⟧"
           }
         }
       }
     },
-    "Requests": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réqúésts⟧"
+    "Request" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réqúést⟧"
           }
         }
       }
     },
-    "Reset to default": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rését tó défáúlt⟧"
+    "Request sent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réqúést séñt⟧"
           }
         }
       }
     },
-    "Restricted": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Réstríçtéd⟧"
+    "Request to join" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réqúést tó jóíñ⟧"
           }
         }
       }
     },
-    "Satellite": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sátéllíté⟧"
+    "Requests" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réqúésts⟧"
           }
         }
       }
     },
-    "Satellite mode sends one small batched request to /api/sync/lite, loads no images and never polls.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sátéllíté módé séñds óñé smáll bátçhéd réqúést tó /api/sync/lite, lóáds ñó ímágés áñd ñévér pólls.⟧"
+    "Reset to default" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Rését tó défáúlt⟧"
           }
         }
       }
     },
-    "Satellite mode: essentials only": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sátéllíté módé: ésséñtíáls óñlý⟧"
+    "Restricted" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Réstríçtéd⟧"
           }
         }
       }
     },
-    "Saved on this phone. Will send when you're back in coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sávéd óñ thís phóñé. Wíll séñd whéñ ýóú'ré báçk íñ çóvérágé.⟧"
+    "RSVP" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦RSVP⟧"
           }
         }
       }
     },
-    "Saved on this phone. Will sync when you're back online.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sávéd óñ thís phóñé. Wíll sýñç whéñ ýóú'ré báçk óñlíñé.⟧"
+    "Satellite" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sátéllíté⟧"
           }
         }
       }
     },
-    "Send code": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séñd çódé⟧"
+    "Satellite mode sends one small batched request to /api/sync/lite, loads no images and never polls." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sátéllíté módé séñds óñé smáll bátçhéd réqúést tó /api/sync/lite, lóáds ñó ímágés áñd ñévér pólls.⟧"
           }
         }
       }
     },
-    "Send comment": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séñd çómméñt⟧"
+    "Satellite mode: essentials only" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sátéllíté módé: ésséñtíáls óñlý⟧"
           }
         }
       }
     },
-    "Send now": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séñd ñów⟧"
+    "Saved on this phone. Will send when you're back in coverage." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sávéd óñ thís phóñé. Wíll séñd whéñ ýóú'ré báçk íñ çóvérágé.⟧"
           }
         }
       }
     },
-    "Sending…": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séñdíñg…⟧"
+    "Saved on this phone. Will sync when you're back online." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sávéd óñ thís phóñé. Wíll sýñç whéñ ýóú'ré báçk óñlíñé.⟧"
           }
         }
       }
     },
-    "Sent": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séñt⟧"
+    "Search members" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séárçh mémbérs⟧"
           }
         }
       }
     },
-    "Server": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sérvér⟧"
+    "Send code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séñd çódé⟧"
           }
         }
       }
     },
-    "Server address": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sérvér áddréss⟧"
+    "Send comment" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séñd çómméñt⟧"
           }
         }
       }
     },
-    "Settings": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Séttíñgs⟧"
+    "Send now" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séñd ñów⟧"
           }
         }
       }
     },
-    "Share": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sháré⟧"
+    "Send to Aunty" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séñd tó Áúñtý⟧"
           }
         }
       }
     },
-    "Sharing since %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sháríñg síñçé %@⟧"
+    "Sending…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séñdíñg…⟧"
           }
         }
       }
     },
-    "Show": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Shów⟧"
+    "Sent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séñt⟧"
           }
         }
       }
     },
-    "Showing saved information.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Shówíñg sávéd íñfórmátíóñ.⟧"
+    "Server" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sérvér⟧"
           }
         }
       }
     },
-    "Sign in again": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sígñ íñ ágáíñ⟧"
+    "Server address" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sérvér áddréss⟧"
           }
         }
       }
     },
-    "Sign in again needed": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sígñ íñ ágáíñ ñéédéd⟧"
+    "Settings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Séttíñgs⟧"
           }
         }
       }
     },
-    "Simulate offline": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Símúláté ófflíñé⟧"
+    "Share" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sháré⟧"
           }
         }
       }
     },
-    "Something went wrong. Please try again.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sóméthíñg wéñt wróñg. Pléásé trý ágáíñ.⟧"
+    "Sharing since %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sháríñg síñçé %@⟧"
           }
         }
       }
     },
-    "Sorry business": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sórrý búsíñéss⟧"
+    "Show" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Shów⟧"
           }
         }
       }
     },
-    "Sorry business notices are text only, with comments off by default.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sórrý búsíñéss ñótíçés áré téxt óñlý, wíth çómméñts óff bý défáúlt.⟧"
+    "Showing saved information." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Shówíñg sávéd íñfórmátíóñ.⟧"
           }
         }
       }
     },
-    "Stop sharing": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Stóp sháríñg⟧"
+    "Sign in again" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sígñ íñ ágáíñ⟧"
           }
         }
       }
     },
-    "Stop sharing with %@?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Stóp sháríñg wíth %@?⟧"
+    "Sign in again needed" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sígñ íñ ágáíñ ñéédéd⟧"
           }
         }
       }
     },
-    "Switch person": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Swítçh pérsóñ⟧"
+    "Simulate offline" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Símúláté ófflíñé⟧"
           }
         }
       }
     },
-    "Sync now": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sýñç ñów⟧"
+    "Sit with your people on this one." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sít wíth ýóúr péóplé óñ thís óñé.⟧"
           }
         }
       }
     },
-    "Sync requests only": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sýñç réqúésts óñlý⟧"
+    "Something went wrong. Please try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sóméthíñg wéñt wróñg. Pléásé trý ágáíñ.⟧"
           }
         }
       }
     },
-    "Syncing %lld changes…": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Sýñçíñg %lld çháñgés…⟧"
+    "Sorry business" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sórrý búsíñéss⟧"
           }
         }
       }
     },
-    "Thanks for letting us know": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Tháñks fór léttíñg ús kñów⟧"
+    "Sorry business notices are text only, with comments off by default." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sórrý búsíñéss ñótíçés áré téxt óñlý, wíth çómméñts óff bý défáúlt.⟧"
           }
         }
       }
     },
-    "That PIN didn't match. Try again.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Thát PÍÑ dídñ't mátçh. Trý ágáíñ.⟧"
+    "Stop language custodian" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Stóp láñgúágé çústódíáñ⟧"
           }
         }
       }
     },
-    "Community languages are written and approved by each community's Elders and language custodians. Anything not yet translated shows in English.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Cómmúñítý láñgúágés áré wríttéñ áñd áppróvéd bý éáçh çómmúñítý's Éldérs áñd láñgúágé çústódíáñs. Áñýthíñg ñót ýét tráñslátéd shóws íñ Éñglísh.⟧"
+    "Stop sharing" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Stóp sháríñg⟧"
           }
         }
       }
     },
-    "The server address in Settings is not valid.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Thé sérvér áddréss íñ Séttíñgs ís ñót válíd.⟧"
+    "Stop sharing with %@?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Stóp sháríñg wíth %@?⟧"
           }
         }
       }
     },
-    "They will no longer see your appointments or get reminders about them. You can add them again later.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Théý wíll ñó lóñgér séé ýóúr áppóíñtméñts ór gét rémíñdérs ábóút thém. Ýóú çáñ ádd thém ágáíñ látér.⟧"
+    "Switch person" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Swítçh pérsóñ⟧"
           }
         }
       }
     },
-    "Thinking of you": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Thíñkíñg óf ýóú⟧"
+    "Sync now" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sýñç ñów⟧"
           }
         }
       }
     },
-    "Title (optional)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Títlé (óptíóñál)⟧"
+    "Sync requests only" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sýñç réqúésts óñlý⟧"
           }
         }
       }
     },
-    "Transport": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Tráñspórt⟧"
+    "Syncing %lld changes…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Sýñçíñg %lld çháñgés…⟧"
           }
         }
       }
     },
-    "Type": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Týpé⟧"
+    "Tell Aunty what's going on…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Téll Áúñtý whát's góíñg óñ…⟧"
           }
         }
       }
     },
-    "Ultra-constrained path": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Últrá-çóñstráíñéd páth⟧"
+    "Thanks for letting us know" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Tháñks fór léttíñg ús kñów⟧"
           }
         }
       }
     },
-    "Under 18": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úñdér 18⟧"
+    "That PIN didn't match. Try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Thát PÍÑ dídñ't mátçh. Trý ágáíñ.⟧"
           }
         }
       }
     },
-    "Unexpected response from server.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úñéxpéçtéd réspóñsé fróm sérvér.⟧"
+    "The Elders haven't switched on an Aunty here." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Thé Éldérs hávéñ't swítçhéd óñ áñ Áúñtý héré.⟧"
           }
         }
       }
     },
-    "Upcoming": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úpçómíñg⟧"
+    "The server address in Settings is not valid." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Thé sérvér áddréss íñ Séttíñgs ís ñót válíd.⟧"
           }
         }
       }
     },
-    "Upcoming events": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úpçómíñg évéñts⟧"
+    "They stop seeing %@. They can ask to join again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Théý stóp sééíñg %@. Théý çáñ ásk tó jóíñ ágáíñ.⟧"
           }
         }
       }
     },
-    "Urgent": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úrgéñt⟧"
+    "They will no longer see your appointments or get reminders about them. You can add them again later." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Théý wíll ñó lóñgér séé ýóúr áppóíñtméñts ór gét rémíñdérs ábóút thém. Ýóú çáñ ádd thém ágáíñ látér.⟧"
           }
         }
       }
     },
-    "Urgent notice": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úrgéñt ñótíçé⟧"
+    "Thinking of you" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Thíñkíñg óf ýóú⟧"
           }
         }
       }
     },
-    "Use a different number": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úsé á dífféréñt ñúmbér⟧"
+    "This one belongs with your Elders." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Thís óñé bélóñgs wíth ýóúr Éldérs.⟧"
           }
         }
       }
     },
-    "Verify": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Vérífý⟧"
+    "This one's for the clinic, not for Aunty." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Thís óñé's fór thé çlíñíç, ñót fór Áúñtý.⟧"
           }
         }
       }
     },
-    "View post": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Víéw póst⟧"
+    "this person" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦thís pérsóñ⟧"
           }
         }
       }
     },
-    "Waiting for approval": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáítíñg fór áppróvál⟧"
+    "Title (optional)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Títlé (óptíóñál)⟧"
           }
         }
       }
     },
-    "Waiting for guardian consent": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáítíñg fór gúárdíáñ çóñséñt⟧"
+    "Touch and hold for more reactions" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Tóúçh áñd hóld fór móré réáçtíóñs⟧"
           }
         }
       }
     },
-    "Waiting to send": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáítíñg tó séñd⟧"
+    "Transport" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Tráñspórt⟧"
           }
         }
       }
     },
-    "Waiting to sync": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáítíñg tó sýñç⟧"
+    "Type" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Týpé⟧"
           }
         }
       }
     },
-    "Wants to join %@.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wáñts tó jóíñ %@.⟧"
+    "Ultra-constrained path" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Últrá-çóñstráíñéd páth⟧"
           }
         }
       }
     },
-    "We'll text you a 6-digit code. Your number is never shown to other members.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wé'll téxt ýóú á 6-dígít çódé. Ýóúr ñúmbér ís ñévér shówñ tó óthér mémbérs.⟧"
+    "Under 18" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úñdér 18⟧"
           }
         }
       }
     },
-    "What would you like to share?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Whát wóúld ýóú líké tó sháré?⟧"
+    "Unexpected response from server." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úñéxpéçtéd réspóñsé fróm sérvér.⟧"
           }
         }
       }
     },
-    "Where": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Whéré⟧"
+    "Unpin" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úñpíñ⟧"
           }
         }
       }
     },
-    "Who": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Whó⟧"
+    "Upcoming" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úpçómíñg⟧"
           }
         }
       }
     },
-    "Who's using MyMob?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Whó's úsíñg MýMób?⟧"
+    "Upcoming events" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úpçómíñg évéñts⟧"
           }
         }
       }
     },
-    "Yes": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýés⟧"
+    "Urgent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úrgéñt⟧"
           }
         }
       }
     },
-    "You": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóú⟧"
+    "Urgent notice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úrgéñt ñótíçé⟧"
           }
         }
       }
     },
-    "You can see this because %@ chose you as a carer. Only they or the clinic can change it.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóú çáñ séé thís béçáúsé %@ çhósé ýóú ás á çárér. Óñlý théý ór thé çlíñíç çáñ çháñgé ít.⟧"
+    "Use a different number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Úsé á dífféréñt ñúmbér⟧"
           }
         }
       }
     },
-    "You don't have permission to do that.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóú dóñ't hávé pérmíssíóñ tó dó thát.⟧"
+    "Verify" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Vérífý⟧"
           }
         }
       }
     },
-    "You're offline": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóú'ré ófflíñé⟧"
+    "View post" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Víéw póst⟧"
           }
         }
       }
     },
-    "You're offline. Try again when you have coverage.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóú'ré ófflíñé. Trý ágáíñ whéñ ýóú hávé çóvérágé.⟧"
+    "Waiting for approval" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wáítíñg fór áppróvál⟧"
           }
         }
       }
     },
-    "You've confirmed you'll attend": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóú'vé çóñfírméd ýóú'll áttéñd⟧"
+    "Waiting for guardian consent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wáítíñg fór gúárdíáñ çóñséñt⟧"
           }
         }
       }
     },
-    "Your PIN stops other people using this phone from opening your profile.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr PÍÑ stóps óthér péóplé úsíñg thís phóñé fróm ópéñíñg ýóúr prófílé.⟧"
+    "Waiting to send" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wáítíñg tó séñd⟧"
           }
         }
       }
     },
-    "Your RSVP": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr RSVP⟧"
+    "Waiting to sync" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wáítíñg tó sýñç⟧"
           }
         }
       }
     },
-    "Your carer needs to have MyMob on their phone.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr çárér ñééds tó hávé MýMób óñ théír phóñé.⟧"
+    "Wants to join %@." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wáñts tó jóíñ %@.⟧"
           }
         }
       }
     },
-    "Your communities": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr çómmúñítíés⟧"
+    "We'll text you a 6-digit code. Your number is never shown to other members." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wé'll téxt ýóú á 6-dígít çódé. Ýóúr ñúmbér ís ñévér shówñ tó óthér mémbérs.⟧"
           }
         }
       }
     },
-    "Your consent": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr çóñséñt⟧"
+    "What would you like to share?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Whát wóúld ýóú líké tó sháré?⟧"
           }
         }
       }
     },
-    "Your mobile number": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr móbílé ñúmbér⟧"
+    "What's on your mind?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Whát's óñ ýóúr míñd?⟧"
           }
         }
       }
     },
-    "Your name (if you're new to MyMob)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr ñámé (íf ýóú'ré ñéw tó MýMób)⟧"
+    "Where" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Whéré⟧"
           }
         }
       }
     },
-    "Your saved information is deleted from this phone. Your account and communities stay as they are.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr sávéd íñfórmátíóñ ís délétéd fróm thís phóñé. Ýóúr áççóúñt áñd çómmúñítíés stáý ás théý áré.⟧"
+    "Who" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Whó⟧"
           }
         }
       }
     },
-    "Your sign-in has expired. Please sign in again.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr sígñ-íñ hás éxpíréd. Pléásé sígñ íñ ágáíñ.⟧"
+    "Who can see this" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Whó çáñ séé thís⟧"
           }
         }
       }
     },
-    "this person": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦thís pérsóñ⟧"
+    "Who's using MyMob?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Whó's úsíñg MýMób?⟧"
           }
         }
       }
     },
-    "· %lld members": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦· %lld mémbérs⟧"
+    "Women only" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wóméñ óñlý⟧"
           }
         }
       }
     },
-    "“%@”": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦“%@”⟧"
+    "Write a comment…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Wríté á çómméñt…⟧"
           }
         }
       }
     },
-    "↑ %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦↑ %@⟧"
+    "Yarn with Aunty" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýárñ wíth Áúñtý⟧"
           }
         }
       }
     },
-    "↓ %@": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦↓ %@⟧"
+    "Yes" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýés⟧"
           }
         }
       }
     },
-    "%lld+ only": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦%lld+ óñlý⟧"
+    "You" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú⟧"
           }
         }
       }
     },
-    "^[%lld comment](inflect: true)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦^[%lld çómméñt](inflect: true)⟧"
+    "You can see this because %@ chose you as a carer. Only they or the clinic can change it." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú çáñ séé thís béçáúsé %@ çhósé ýóú ás á çárér. Óñlý théý ór thé çlíñíç çáñ çháñgé ít.⟧"
           }
         }
       }
     },
-    "^[%lld reaction](inflect: true)": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦^[%lld réáçtíóñ](inflect: true)⟧"
+    "You don't have permission to do that." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú dóñ't hávé pérmíssíóñ tó dó thát.⟧"
           }
         }
       }
     },
-    "Be the first to share something with the community.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Bé thé fírst tó sháré sóméthíñg wíth thé çómmúñítý.⟧"
+    "You said" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú sáíd⟧"
           }
         }
       }
     },
-    "Couldn't update the post": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çóúldñ't úpdáté thé póst⟧"
+    "You're offline" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú'ré ófflíñé⟧"
           }
         }
       }
     },
-    "Create post": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Çréáté póst⟧"
+    "You're offline. Try again when you have coverage." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú'ré ófflíñé. Trý ágáíñ whéñ ýóú hávé çóvérágé.⟧"
           }
         }
       }
     },
-    "It disappears for everyone in the group, including on phones that are offline once they sync.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ít dísáppéárs fór évérýóñé íñ thé gróúp, íñçlúdíñg óñ phóñés thát áré ófflíñé óñçé théý sýñç.⟧"
+    "You've confirmed you'll attend" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóú'vé çóñfírméd ýóú'll áttéñd⟧"
           }
         }
       }
     },
-    "No comments yet. Start the conversation.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó çómméñts ýét. Stárt thé çóñvérsátíóñ.⟧"
+    "Your carer needs to have MyMob on their phone." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr çárér ñééds tó hávé MýMób óñ théír phóñé.⟧"
           }
         }
       }
     },
-    "No posts yet": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ñó pósts ýét⟧"
+    "Your communities" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr çómmúñítíés⟧"
           }
         }
       }
     },
-    "Pin to top": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Píñ tó tóp⟧"
+    "Your consent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr çóñséñt⟧"
           }
         }
       }
     },
-    "Remove post": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rémóvé póst⟧"
+    "Your mobile number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr móbílé ñúmbér⟧"
           }
         }
       }
     },
-    "Remove this post?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Rémóvé thís póst?⟧"
+    "Your name (if you're new to MyMob)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr ñámé (íf ýóú'ré ñéw tó MýMób)⟧"
           }
         }
       }
     },
-    "Touch and hold for more reactions": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Tóúçh áñd hóld fór móré réáçtíóñs⟧"
+    "Your PIN stops other people using this phone from opening your profile." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr PÍÑ stóps óthér péóplé úsíñg thís phóñé fróm ópéñíñg ýóúr prófílé.⟧"
           }
         }
       }
     },
-    "Unpin": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Úñpíñ⟧"
+    "Your post goes up straight away. Elders can remove posts that aren't right for the community." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr póst góés úp stráíght áwáý. Éldérs çáñ rémóvé pósts thát áréñ't ríght fór thé çómmúñítý.⟧"
           }
         }
       }
     },
-    "What's on your mind?": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Whát's óñ ýóúr míñd?⟧"
+    "Your RSVP" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr RSVP⟧"
           }
         }
       }
     },
-    "Write a comment…": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Wríté á çómméñt…⟧"
+    "Your saved information is deleted from this phone. Your account and communities stay as they are." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr sávéd íñfórmátíóñ ís délétéd fróm thís phóñé. Ýóúr áççóúñt áñd çómmúñítíés stáý ás théý áré.⟧"
           }
         }
       }
     },
-    "Your post goes up straight away. Elders can remove posts that aren't right for the community.": {
-      "localizations": {
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⟦Ýóúr póst góés úp stráíght áwáý. Éldérs çáñ rémóvé pósts thát áréñ't ríght fór thé çómmúñítý.⟧"
+    "Your sign-in has expired. Please sign in again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⟦Ýóúr sígñ-íñ hás éxpíréd. Pléásé sígñ íñ ágáíñ.⟧"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

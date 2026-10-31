@@ -5,6 +5,7 @@ enum FeedRoute: Hashable {
     case post(String)
     case event(String)
     case moderation(groupId: String, groupName: String)
+    case aunty(groupId: String, groupName: String)
 }
 
 struct GroupFeedView: View {
@@ -61,9 +62,15 @@ struct GroupFeedView: View {
             case .post(let id): PostDetailView(postId: id)
             case .event(let id): EventDetailView(eventId: id)
             case let .moderation(gid, name): ModerationView(groupId: gid, groupName: name)
+            case let .aunty(gid, name): AuntyChatView(groupId: gid, groupName: name)
             }
         }
         .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                NavigationLink(value: FeedRoute.aunty(groupId: membership.groupId, groupName: membership.groupName)) {
+                    Label("Yarn with Aunty", systemImage: "bubble.left.and.text.bubble.right")
+                }
+            }
             if isElder {
                 ToolbarItem(placement: .primaryAction) {
                     NavigationLink(value: FeedRoute.moderation(groupId: membership.groupId, groupName: membership.groupName)) {

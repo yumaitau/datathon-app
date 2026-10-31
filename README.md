@@ -20,7 +20,12 @@ xcodebuild -project DatathonApp/DatathonApp.xcodeproj -scheme DatathonApp \
 
 `DatathonAppTests` covers API decoding and the offline write queue; `LiveServerTests` and
 `DatathonAppUITests` need the dev server running and use seeded accounts without changing demo data
-(the UI test signs in as Aunty Grace and only browses).
+(the UI tests sign in as Aunty Grace and only browse, except `AuntyUITests`, which writes to Grace's
+own private Aunty thread and clears it again).
+
+`AuntyUITests` needs Saltbush Creek's Aunty switched on, and a simulator with no leftover profile —
+`-uiTestReset` clears UserDefaults but not the Keychain, so run `xcrun simctl erase <device>` if
+sign-in starts behaving oddly.
 
 ## Demo flow A (Elder governance, one phone)
 
@@ -41,6 +46,21 @@ xcodebuild -project DatathonApp/DatathonApp.xcodeproj -scheme DatathonApp \
   (see **Me → Waiting to send**).
 - Satellite beat: **Settings → Developer → Force satellite mode** → banner "Satellite mode: essentials
   only" → confirm → **Network log** shows `POST /api/sync/lite` with payload and gzip bytes.
+
+## AI Aunty
+
+**Community** → a group → **Yarn with Aunty** opens a private chat with a bot
+that yarns like a community Aunty. The group's Elders switch her on and write
+her brief at the server's `/elder/<groupId>`; until they do, the screen shows
+"No Aunty here yet".
+
+Nothing here is cached or queued: a yarn only makes sense with a reply coming
+back, so offline and satellite both say so instead of silently banking the
+question. The header states every time that she is a computer, not a real Elder,
+and that the yarn is private. Health, sorry business, culture and crisis replies
+carry a handover panel pointing at a real person; the crisis one always shows
+13YARN and Lifeline and is decided server-side, not by the model. **Clear this
+yarn** deletes it for good.
 
 ## Design notes
 

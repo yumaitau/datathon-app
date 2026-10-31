@@ -196,6 +196,37 @@ nonisolated struct ReactionResult: Codable, Sendable {
     var counts: ReactionCounts
 }
 
+// MARK: - AI Aunty
+
+/// Why the Aunty stepped back and pointed at a real person instead of answering.
+nonisolated enum AuntyHandoff: String, Codable, Sendable {
+    case health, sorryBusiness = "sorry_business", crisis, elder
+}
+
+nonisolated struct AuntyMessage: Codable, Hashable, Identifiable, Sendable {
+    var id: String
+    /// "member" or "aunty".
+    var author: String
+    var body: String
+    var handoff: String?
+    /// True when the server had no model configured and sent a canned reply.
+    var mocked: Bool
+    var createdAt: Date
+
+    var isAunty: Bool { author == "aunty" }
+    var handoffKind: AuntyHandoff? { handoff.flatMap(AuntyHandoff.init(rawValue:)) }
+}
+
+nonisolated struct AuntyThread: Codable, Sendable {
+    var enabled: Bool
+    var guidance: String?
+    var messages: [AuntyMessage]
+}
+
+nonisolated struct AuntyReply: Codable, Sendable {
+    var messages: [AuntyMessage]
+}
+
 nonisolated struct PendingMember: Codable, Hashable, Identifiable, Sendable {
     struct Person: Codable, Hashable, Sendable {
         var id: String
